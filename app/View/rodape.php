@@ -1,4 +1,4 @@
-
+</div>
 <footer class="bg-white sticky-footer">
     <div class="container my-auto">
         <div class="text-center my-auto copyright"><span style="font-size: 16px;">Copyright © Thiago Melo; Victor Oliveira - 2019</span></div>

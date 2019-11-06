@@ -9,11 +9,6 @@ class MainController implements IController
 
     public function request(): void
     {
-        $pontos = array(
-            "url"=>"excript.com/",
-            404=>"excript.com/error/",
-            301=>"excript.com/error301/",
-        );
 
         $itens = array("itens" =>
             array( "url" => '/gerenciarAluno', "icone" => 'ico1', "nome" => 'GERENCIAR ALUNO',"status"),

@@ -62,6 +62,6 @@
         </div>
 
 
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <button type="submit" class="btn bg_color_primary my_FontColor">Cadastrar</button>
     </form>
 </div>

@@ -16,7 +16,8 @@ class GerenciarAdminController implements IController
             [
 
                 "cabecalho.php",
-                "contentGerenciarAdmin.php",
+                "navGerenciarAdmin.php",
+                "form-cadastrar-admin.php",
                 "rodape.php"
 
             ],

@@ -1,16 +1,16 @@
 .bg-gradient-primary {
-  background-image: linear-gradient(180deg,#f26322 50%,#000000);
+  background-image: linear-gradient(180deg, #9ea99e 50%,#000000);
   /*background-image: linear-gradient(180deg,#3C3F41 10%,#3C3F41);*/
   background-size: cover;
 }
 
 .my_FontColor {
-  text-shadow: 0 0 0.2em #000, 0 0 0.2em #000, 0 0 0.2em #000
-
+  text-shadow: 0 0 0.2em #000, 0 0 0.2em #000, 0 0 0.2em #000;
+  color:#FFF;
 }
 
 .bg_color_primary{
-  background-color: #f26322;
+  background-color: #9ea99e;
   color:#FFF;
 }
 

@@ -17,17 +17,13 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-3">
-                <label>Data de Nascimento</label>
-                <input type="date" class="form-control" placeholder="Data de Nascimento">
-            </div>
-            <div class="form-group col-md-5">
+            <div class="form-group col-md-6">
                 <label>Email</label>
                 <input type="email" class="form-control" placeholder="Email">
             </div>
-            <div class="form-group col-md-4">
-                <label>Senha</label>
-                <input type="password" class="form-control" placeholder="Senha">
+            <div class="form-group col-md-6">
+                <label>Data de Nascimento</label>
+                <input type="date" class="form-control" placeholder="Data de Nascimento">
             </div>
         </div>
 

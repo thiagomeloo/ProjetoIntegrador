@@ -33,6 +33,7 @@ class LoginController implements IController
             exit();
         }
         $_SESSION["usuario"]=$usuario;
+        Transaction::close();
         header('Location: /main');
         exit();
     }

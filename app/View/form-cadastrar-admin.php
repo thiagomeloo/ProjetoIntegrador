@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <form>
+    <form method="post" action="/adicionarUsuario">
         <hr>
         <h5 class="font-weight-bold">Dados Pessoais</h5>
         <hr>
@@ -9,7 +9,7 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label>Nome</label>
-                <input type="text" class="form-control" placeholder="Nome Completo">
+                <input type="text" class="form-control" placeholder="Nome Completo" name="nome">
             </div>
             <div class="form-group col-md-6">
                 <label>CPF</label>
@@ -19,7 +19,7 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label>Email</label>
-                <input type="email" class="form-control" placeholder="Email">
+                <input type="email" class="form-control" placeholder="Email" name="email">
             </div>
             <div class="form-group col-md-6">
                 <label>Data de Nascimento</label>

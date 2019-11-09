@@ -7,3 +7,5 @@
 /gerenciarAluno: GerenciarAlunoController
 /gerenciarProfessor: GerenciarProfessorController
 /gerenciarAdmin: GerenciarAdminController
+/adicionarUsuario: AdicionarAdmController
+/validaUser: ValidaUserController

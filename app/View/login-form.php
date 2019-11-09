@@ -19,10 +19,10 @@
                     <div class="login-form">
                         <form action="/login" method="post">
                             <div class="form-group">
-                                <div class="input-group"><input class="form-control" type="text" id="login-username" name="email" required="" placeholder="Matricula"></div>
+                                <div class="input-group"><input class="form-control text-center" type="text" id="login-username" name="email" required="" placeholder="E-mail"></div>
                             </div>
                             <div class="form-group">
-                                <div class="input-group"><input class="form-control" type="password" name="senha" required="" placeholder="Senha"></div>
+                                <div class="input-group"><input class="form-control text-center" type="password" name="senha" required="" placeholder="Senha"></div>
                             </div>
                             <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color: rgb(242,99,34);">ENTRAR</button></div>
                         </form>

@@ -8,6 +8,7 @@ connection:
   user:
   pass:
   type: sqlite
+  port:
 # caminhos desprotegidos definidos por expressões regulares
 paths_unprotected:
   - /login/

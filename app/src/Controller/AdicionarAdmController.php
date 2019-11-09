@@ -2,6 +2,7 @@
 namespace Ifnc\Tads\Controller;
 
 use Ifnc\Tads\Entity\Usuario;
+use Ifnc\Tads\Helper\Send_Email;
 use Ifnc\Tads\Helper\Transaction;
 
 class AdicionarAdmController implements IController
@@ -11,7 +12,7 @@ class AdicionarAdmController implements IController
         $usuario = new Usuario();
         $usuario->nome = $_POST['nome'];
         $usuario->email = $_POST['email'];
-        $usuario->senha = password_hash("123", PASSWORD_ARGON2I);
+        $usuario->senha = Send_Email::random_key(8);
 
 
         Transaction::open();

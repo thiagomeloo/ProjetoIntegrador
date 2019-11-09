@@ -14,7 +14,7 @@ class Usuario extends Record
     public $cpf;
     public $email;
     public $senha;
-    public $tipo;
+    public $tipo_user;
     public $status;
 
     public function valide($senha){

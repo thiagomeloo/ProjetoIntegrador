@@ -14,12 +14,12 @@ class MainController implements IController
         $itens = array();
 
 
-        switch ($_SESSION["usuario"]->tipo){
+        switch ($_SESSION["usuario"]->tipo_user){
             case 1:
                 $itens = array("itens" =>
                     array( "url" => '/gerenciarAluno', "icone" => 'ico1', "nome" => 'GERENCIAR ALUNO'),
                     array( "url" => '/gerenciarProfessor', "icone" => 'ico2', "nome" => 'GERENCIAR PROFESSOR'),
-                    array( "url" => '/gerenciarProfessor', "icone" => 'ico2', "nome" => 'GERENCIAR TURMA'),
+                    array( "url" => '/validaUser?id=1', "icone" => 'ico2', "nome" => 'GERENCIAR TURMA'),
                     array( "url" => '/gerenciarAdmin', "icone" => 'ico3', "nome" => 'GERENCIAR ADMIN')
                 );
                 break;

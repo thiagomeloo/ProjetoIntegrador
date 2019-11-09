@@ -8,4 +8,5 @@
 /gerenciarProfessor: GerenciarProfessorController
 /gerenciarAdmin: GerenciarAdminController
 /adicionarUsuario: AdicionarAdmController
+/formValidaUser: FormValidaUserController
 /validaUser: ValidaUserController

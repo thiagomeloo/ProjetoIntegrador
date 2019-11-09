@@ -18,6 +18,7 @@ class LoginController implements IController
         );
 
         if (is_null($email) || $email === false) {
+            $_SESSION["msg"]=array( "msg" => 'Email ou Senha incorretos!', "tipo" => 'alert-danger',"status" => 0);
             header('Location: /login-form');
             exit();
         }

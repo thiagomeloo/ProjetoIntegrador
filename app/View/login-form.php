@@ -30,18 +30,17 @@
                     <div class="login-response has-error"></div>
                     <?php if(isset($_SESSION["msg"]) && ($_SESSION["msg"]["status"] == 0)){
 
-                    ?>
-                         <div class="login-panel alert <?= $_SESSION["msg"]['tipo']?> alert-dismissible fade show" role="alert">
+                        ?>
+                        <div class="row- col- alert sticky-top <?= $_SESSION["msg"]['tipo']?> alert-dismissible fade show" role="alert">
                             <?= $_SESSION["msg"]['msg']?>
-                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <button type="button" class="close m-auto" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                         </div>
+                        </div>
 
-                    <?php
+                        <?php
                         $_SESSION["msg"]["status"] = 1;
                     } ?>
-
                 </div>
             </div>
         </div>

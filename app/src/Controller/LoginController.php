@@ -29,6 +29,7 @@ class LoginController implements IController
         Transaction::open();
         $usuario = Usuario::findByCondition("email='{$_POST['email']}'");
         if (!$usuario || !$usuario->valide($senha)) {
+            $_SESSION["msg"]=array( "msg" => 'Email ou Senha incorretos!', "tipo" => 'alert-danger',"status" => 0);
             header('Location: /login-form');
             exit();
         }

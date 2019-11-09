@@ -12,6 +12,8 @@ connection:
 paths_unprotected:
   - /login/
   - /404found/
+  - /formValidaUser/
+  - /validaUser/
 # caminho seguido quando é acessado um sem permissão
 path_unprotected_default:
   /login-form

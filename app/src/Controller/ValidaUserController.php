@@ -11,16 +11,17 @@ class ValidaUserController implements IController
     {
         Transaction::open();
         $usuario = Usuario::findByCondition("email='{$_POST['email']}'");
-        if (is_null($usuario) || !$usuario->valide($_POST['codigo'])) {
-            //header('Location: /login-form');
+        if (!$usuario || !$usuario->valide($_POST['codigo'])) {
+            header("Location: formValidaUser?email={$_POST['email']}");
             exit();
         }
         $usuario->status = 1;
         $usuario->senha = password_hash($_POST['senha'], PASSWORD_ARGON2I);
         $usuario->store();
         Transaction::close();
+        $_SESSION["msg"]=array( "msg" => 'Usuario validado com Sucesso!', "tipo" => 'alert-success',"status" => 0);
 
-        //header("Location: /login-form", true, 302);
+        header("Location: /login-form", true, 302);
         exit();
 
     }

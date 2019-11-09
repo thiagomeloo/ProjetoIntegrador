@@ -12,7 +12,8 @@ class AdicionarAdmController implements IController
         $usuario = new Usuario();
         $usuario->nome = $_POST['nome'];
         $usuario->email = $_POST['email'];
-        $usuario->senha = Send_Email::random_key(8);
+//      $usuario->senha = Send_Email::random_key(8);
+        $usuario->senha = password_hash("123", PASSWORD_ARGON2I);;
 
 
         Transaction::open();

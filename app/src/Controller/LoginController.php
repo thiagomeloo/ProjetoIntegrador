@@ -28,7 +28,7 @@ class LoginController implements IController
 
         Transaction::open();
         $usuario = Usuario::findByCondition("email='{$_POST['email']}'");
-        if (is_null($usuario) || !$usuario->valide($senha)) {
+        if (!$usuario || !$usuario->valide($senha)) {
             header('Location: /login-form');
             exit();
         }

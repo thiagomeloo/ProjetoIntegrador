@@ -4,6 +4,7 @@
 namespace Ifnc\Tads\Helper;
 
 
+
 final class Render
 {
     public static function html($paths, $data): string

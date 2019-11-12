@@ -3,10 +3,13 @@ require "../vendor/autoload.php";
 
 use Symfony\Component\Yaml\Yaml;
 
+
 session_start();
 
 $routes = Yaml::parseFile('../config/routes.yaml');
 $config = Yaml::parseFile('../config/config.yaml');
+
+
 
 if(isset($_SERVER['PATH_INFO'])){
     $path = $_SERVER['PATH_INFO'];

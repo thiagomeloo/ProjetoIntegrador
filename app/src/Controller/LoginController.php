@@ -5,6 +5,7 @@ namespace Ifnc\Tads\Controller;
 
 
 use Ifnc\Tads\Entity\Usuario;
+use Ifnc\Tads\Helper\Mensagem;
 use Ifnc\Tads\Helper\Transaction;
 
 class LoginController implements IController
@@ -18,7 +19,7 @@ class LoginController implements IController
         );
 
         if (is_null($email) || $email === false) {
-            $_SESSION["msg"]=array( "msg" => 'Email ou Senha incorretos!', "tipo" => 'alert-danger',"status" => 0);
+            $_SESSION["msg"]= Mensagem::create_msg("Email ou Senha incorretos!","alert-danger");
             header('Location: /login-form');
             exit();
         }
@@ -30,7 +31,7 @@ class LoginController implements IController
         Transaction::open();
         $usuario = Usuario::findByCondition("email='{$_POST['email']}'");
         if (!$usuario || !$usuario->valide($senha)) {
-            $_SESSION["msg"]=array( "msg" => 'Email ou Senha incorretos!', "tipo" => 'alert-danger',"status" => 0);
+            $_SESSION["msg"]= Mensagem::create_msg("Email ou Senha incorretos!","alert-danger");
             header('Location: /login-form');
             exit();
         }

@@ -2,6 +2,7 @@
 namespace Ifnc\Tads\Controller;
 
 use Ifnc\Tads\Entity\Usuario;
+use Ifnc\Tads\Helper\Mensagem;
 use Ifnc\Tads\Helper\Send_Email;
 use Ifnc\Tads\Helper\Transaction;
 
@@ -20,6 +21,7 @@ class AdicionarAdmController implements IController
         $usuario->store();
         Transaction::close();
         //enviar o email para o usuario aqui
+        $_SESSION["msg"]= Mensagem::create_msg("Usuario cadastrado com Sucesso!","alert-success");
         header('Location: /main', true, 302);
         exit();
     }

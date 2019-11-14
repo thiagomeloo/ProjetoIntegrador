@@ -21,7 +21,7 @@ class AdicionarAdmController implements IController
         $usuario->store();
         Transaction::close();
         //enviar o email para o usuario aqui
-        $_SESSION["msg"]= Mensagem::create_msg("Usuario cadastrado com Sucesso!","alert-success");
+        $_SESSION["msg"] = Mensagem::create_msg("Usuario cadastrado com Sucesso!","alert-success");
         header('Location: /main', true, 302);
         exit();
     }

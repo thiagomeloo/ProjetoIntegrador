@@ -14,8 +14,9 @@ class AdicionarAdmController implements IController
         $usuario = new Usuario();
         $usuario->nome = $_POST['nome'];
         $usuario->email = $_POST['email'];
-//      $usuario->senha = _Email::random_key(8);
-        $usuario->senha = password_hash("123", PASSWORD_ARGON2I);;
+
+        $senha =Email::random_key(8);
+        $usuario->senha = password_hash($senha, PASSWORD_ARGON2I);;
 
 
         Transaction::open();
@@ -23,7 +24,13 @@ class AdicionarAdmController implements IController
         Transaction::close();
         //enviar o email para o usuario aqui
         $_SESSION["msg"] = Mensagem::create_msg("Usuario cadastrado com Sucesso!","alert-success");
-        $em = new Email();
+
+        $em = new Email($usuario->email, $usuario->nome, "Validação de conta",
+            "Olá segue em anexo o codigo e o link para validação de sua conta. \n
+            Codigo:".$senha."\n
+            link:http://localhost/formValidaUser?email=".$usuario->email." \n
+            att: equipe SWE.");
+
         header('Location: /main', true, 302);
         exit();
     }

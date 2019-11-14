@@ -1,19 +1,15 @@
 <?php
 namespace Ifnc\Tads\Helper;
 
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 
-
-
-
 class Email
 {
-    public $destino;
 
 
 
@@ -22,7 +18,7 @@ class Email
         return substr(str_shuffle($letters), 0, $chars);
     }
 
-    public function __construct(){
+    public function __construct($email, $nome, $titulo, $conteudo){
         $mail = new PHPMailer(true);
         try {
             //Server settings
@@ -34,13 +30,13 @@ class Email
             $mail->Password   = 'qprwoqboutvrsxzi';                               // SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
             $mail->Port       = 465;                                    // TCP port to connect to
+            $mail->CharSet = 'UTF-8';
             //Recipients
-            $mail->setFrom('4thiagomelo5@gmail.com', 'Sistema Web Escolar');
-            //$mail->addAddress('4thiago5@gmail.com', 'Joe User');     // Add a recipient
-            $mail->addAddress('4thiagomelo5@gmail.com');               // Name is optional
+            $mail->setFrom('4thiago5@gmail.com', 'Sistema Web Escolar');
+            $mail->addAddress($email, $nome);     // quem vai receber o email
             // Content     // Set phpmailer format to HTML
-            $mail->Subject = 'Here is the subject';
-            $mail->Body    = 'teste';
+            $mail->Subject = $titulo;
+            $mail->Body    = $conteudo;
             $mail->send();
             echo 'Message has been sent';
         } catch (Exception $e) {

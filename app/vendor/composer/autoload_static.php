@@ -16,6 +16,10 @@ class ComposerStaticInita8d7575a5f46896c2b64be84558c514e
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Yaml\\' => 23,
         ),
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
         'I' => 
         array (
             'Ifnc\\Tads\\' => 10,
@@ -36,6 +40,10 @@ class ComposerStaticInita8d7575a5f46896c2b64be84558c514e
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
         ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
         'Ifnc\\Tads\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
@@ -50,69 +58,11 @@ class ComposerStaticInita8d7575a5f46896c2b64be84558c514e
         ),
     );
 
-    public static $classMap = array (
-        'Doctrine\\Common\\Annotations\\Annotation' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation.php',
-        'Doctrine\\Common\\Annotations\\AnnotationException' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationException.php',
-        'Doctrine\\Common\\Annotations\\AnnotationReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationReader.php',
-        'Doctrine\\Common\\Annotations\\AnnotationRegistry' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationRegistry.php',
-        'Doctrine\\Common\\Annotations\\Annotation\\Attribute' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Attribute.php',
-        'Doctrine\\Common\\Annotations\\Annotation\\Attributes' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Attributes.php',
-        'Doctrine\\Common\\Annotations\\Annotation\\Enum' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Enum.php',
-        'Doctrine\\Common\\Annotations\\Annotation\\IgnoreAnnotation' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/IgnoreAnnotation.php',
-        'Doctrine\\Common\\Annotations\\Annotation\\Required' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Required.php',
-        'Doctrine\\Common\\Annotations\\Annotation\\Target' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Target.php',
-        'Doctrine\\Common\\Annotations\\CachedReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/CachedReader.php',
-        'Doctrine\\Common\\Annotations\\DocLexer' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/DocLexer.php',
-        'Doctrine\\Common\\Annotations\\DocParser' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php',
-        'Doctrine\\Common\\Annotations\\FileCacheReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/FileCacheReader.php',
-        'Doctrine\\Common\\Annotations\\IndexedReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/IndexedReader.php',
-        'Doctrine\\Common\\Annotations\\PhpParser' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/PhpParser.php',
-        'Doctrine\\Common\\Annotations\\Reader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Reader.php',
-        'Doctrine\\Common\\Annotations\\SimpleAnnotationReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/SimpleAnnotationReader.php',
-        'Doctrine\\Common\\Annotations\\TokenParser' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/TokenParser.php',
-        'Doctrine\\Common\\Lexer\\AbstractLexer' => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer/AbstractLexer.php',
-        'Ifnc\\Tads\\Controller\\AdicionarProdutoController' => __DIR__ . '/../..' . '/src/Controller/AdicionarProdutoController.php',
-        'Ifnc\\Tads\\Controller\\AdicionarProdutoFormController' => __DIR__ . '/../..' . '/src/Controller/AdicionarProdutoFormController.php',
-        'Ifnc\\Tads\\Controller\\ApagarProdutoController' => __DIR__ . '/../..' . '/src/Controller/ApagarProdutoController.php',
-        'Ifnc\\Tads\\Controller\\EditarProdutoController' => __DIR__ . '/../..' . '/src/Controller/EditarProdutoController.php',
-        'Ifnc\\Tads\\Controller\\EditarProdutoFormController' => __DIR__ . '/../..' . '/src/Controller/EditarProdutoFormController.php',
-        'Ifnc\\Tads\\Controller\\IController' => __DIR__ . '/../..' . '/src/Controller/IController.php',
-        'Ifnc\\Tads\\Controller\\ListarProdutosController' => __DIR__ . '/../..' . '/src/Controller/ListarProdutosController.php',
-        'Ifnc\\Tads\\Controller\\LoginController' => __DIR__ . '/../..' . '/src/Controller/LoginController.php',
-        'Ifnc\\Tads\\Controller\\LoginFormController' => __DIR__ . '/../..' . '/src/Controller/LoginFormController.php',
-        'Ifnc\\Tads\\Controller\\LogoutController' => __DIR__ . '/../..' . '/src/Controller/LogoutController.php',
-        'Ifnc\\Tads\\Controller\\PortalController' => __DIR__ . '/../..' . '/src/Controller/PortalController.php',
-        'Ifnc\\Tads\\Entity\\Cliente' => __DIR__ . '/../..' . '/src/Entity/Cliente.php',
-        'Ifnc\\Tads\\Entity\\Item' => __DIR__ . '/../..' . '/src/Entity/Item.php',
-        'Ifnc\\Tads\\Entity\\Produto' => __DIR__ . '/../..' . '/src/Entity/Produto.php',
-        'Ifnc\\Tads\\Entity\\Usuario' => __DIR__ . '/../..' . '/src/Entity/Usuario.php',
-        'Ifnc\\Tads\\Entity\\Venda' => __DIR__ . '/../..' . '/src/Entity/Venda.php',
-        'Ifnc\\Tads\\Helper\\Connection' => __DIR__ . '/../..' . '/src/Helper/Connection.php',
-        'Ifnc\\Tads\\Helper\\Record' => __DIR__ . '/../..' . '/src/Helper/Record.php',
-        'Ifnc\\Tads\\Helper\\Render' => __DIR__ . '/../..' . '/src/Helper/Render.php',
-        'Ifnc\\Tads\\Helper\\Transaction' => __DIR__ . '/../..' . '/src/Helper/Transaction.php',
-        'Ifnc\\Tads\\Mapper\\VendaMapper' => __DIR__ . '/../..' . '/src/Mapper/VendaMapper.php',
-        'Symfony\\Component\\Yaml\\Command\\LintCommand' => __DIR__ . '/..' . '/symfony/yaml/Command/LintCommand.php',
-        'Symfony\\Component\\Yaml\\Dumper' => __DIR__ . '/..' . '/symfony/yaml/Dumper.php',
-        'Symfony\\Component\\Yaml\\Escaper' => __DIR__ . '/..' . '/symfony/yaml/Escaper.php',
-        'Symfony\\Component\\Yaml\\Exception\\DumpException' => __DIR__ . '/..' . '/symfony/yaml/Exception/DumpException.php',
-        'Symfony\\Component\\Yaml\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/symfony/yaml/Exception/ExceptionInterface.php',
-        'Symfony\\Component\\Yaml\\Exception\\ParseException' => __DIR__ . '/..' . '/symfony/yaml/Exception/ParseException.php',
-        'Symfony\\Component\\Yaml\\Exception\\RuntimeException' => __DIR__ . '/..' . '/symfony/yaml/Exception/RuntimeException.php',
-        'Symfony\\Component\\Yaml\\Inline' => __DIR__ . '/..' . '/symfony/yaml/Inline.php',
-        'Symfony\\Component\\Yaml\\Parser' => __DIR__ . '/..' . '/symfony/yaml/Parser.php',
-        'Symfony\\Component\\Yaml\\Tag\\TaggedValue' => __DIR__ . '/..' . '/symfony/yaml/Tag/TaggedValue.php',
-        'Symfony\\Component\\Yaml\\Unescaper' => __DIR__ . '/..' . '/symfony/yaml/Unescaper.php',
-        'Symfony\\Component\\Yaml\\Yaml' => __DIR__ . '/..' . '/symfony/yaml/Yaml.php',
-        'Symfony\\Polyfill\\Ctype\\Ctype' => __DIR__ . '/..' . '/symfony/polyfill-ctype/Ctype.php',
-    );
-
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInita8d7575a5f46896c2b64be84558c514e::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInita8d7575a5f46896c2b64be84558c514e::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInita8d7575a5f46896c2b64be84558c514e::$classMap;
 
         }, null, ClassLoader::class);
     }

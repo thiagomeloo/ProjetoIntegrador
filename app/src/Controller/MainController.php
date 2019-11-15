@@ -2,6 +2,7 @@
 
 namespace Ifnc\Tads\Controller;
 
+use Ifnc\Tads\Entity\Usuario;
 use Ifnc\Tads\Helper\Render;
 
 class MainController implements IController
@@ -12,14 +13,14 @@ class MainController implements IController
 
 
         $itens = array();
+        $usuario = Usuario::download();
 
-
-        switch ($_SESSION["usuario"]->tipo_user){
+        switch ($usuario->tipo_user){
             case 1:
                 $itens = array("itens" =>
                     array( "url" => '/gerenciarAluno', "icone" => 'ico1', "nome" => 'GERENCIAR ALUNO'),
                     array( "url" => '/gerenciarProfessor', "icone" => 'ico2', "nome" => 'GERENCIAR PROFESSOR'),
-                    array( "url" => '/validaUser?id=1', "icone" => 'ico2', "nome" => 'GERENCIAR TURMA'),
+                    array( "url" => '/main', "icone" => 'ico2', "nome" => 'GERENCIAR TURMA'),
                     array( "url" => '/gerenciarAdmin', "icone" => 'ico3', "nome" => 'GERENCIAR ADMIN')
                 );
                 break;
@@ -41,7 +42,7 @@ class MainController implements IController
                 "rodape.php"
             ],
             [
-                "titulo"=>"Portal Web",
+                "usuario"=>$usuario,
                 "itens" => $_SESSION["itensMenu"]
 
             ]);

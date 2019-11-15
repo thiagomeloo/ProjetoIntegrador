@@ -3,7 +3,7 @@
 
 namespace Ifnc\Tads\Controller;
 
-
+use Ifnc\Tads\Entity\Usuario;
 use Ifnc\Tads\Helper\Render;
 
 class GerenciarAlunoController implements IController
@@ -21,6 +21,7 @@ class GerenciarAlunoController implements IController
 
             ],
             [
+                "usuario" => Usuario::download(),
                 "titulo"=>"Login",
                 "itens" => $_SESSION["itensMenu"]
             ]);

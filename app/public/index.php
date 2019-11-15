@@ -1,6 +1,7 @@
 <?php
 require "../vendor/autoload.php";
 
+use Ifnc\Tads\Entity\Usuario;
 use Symfony\Component\Yaml\Yaml;
 
 
@@ -18,7 +19,7 @@ if(isset($_SERVER['PATH_INFO'])){
 }
 
 if (
-        !isset($_SESSION['usuario'])
+        is_null(Usuario::download())
         &&
         !array_filter(
             $config["paths_unprotected"],

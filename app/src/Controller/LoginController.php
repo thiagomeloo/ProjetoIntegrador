@@ -35,7 +35,8 @@ class LoginController implements IController
             header('Location: /login-form');
             exit();
         }
-        $_SESSION["usuario"]=$usuario;
+        //$_SESSION["usuario"]=$usuario;
+        $usuario->upload();
         Transaction::close();
         header('Location: /main');
         exit();

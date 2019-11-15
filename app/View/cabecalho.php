@@ -24,7 +24,12 @@
                 <li class="nav-item" role="presentation">
                     <a class="nav-link active" href=""><i class=""></i>
                         <img class="border rounded-circle img-profile mx-auto" src="assets/img/user-icon.jpg" />
-                        <span class="p-1 my_FontColor"><?=$_SESSION["usuario"]->nome ?></span>
+                        <span class="p-1 my_FontColor">
+                            <?php
+                                if($usuario){
+                                    echo $usuario->nome;
+                                }
+                            ?></span>
                     </a></li>
             </ul>
             <?php

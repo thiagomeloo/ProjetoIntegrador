@@ -3,7 +3,8 @@ namespace Ifnc\Tads\Controller;
 
 use Ifnc\Tads\Entity\Usuario;
 use Ifnc\Tads\Helper\Email;
-use Ifnc\Tads\Helper\Mensagem;
+use Ifnc\Tads\Helper\Flash;
+use Ifnc\Tads\Helper\Message;
 use Ifnc\Tads\Helper\SendEmail;
 use Ifnc\Tads\Helper\Transaction;
 use Ifnc\Tads\Helper\Util;
@@ -11,6 +12,8 @@ use Ifnc\Tads\Helper\Util;
 
 class AdicionarAdmController implements IController
 {
+    use Flash;
+
     public function request(): void
     {
         $usuario = new Usuario();
@@ -23,8 +26,10 @@ class AdicionarAdmController implements IController
         Transaction::open();
         $usuario->store();
         Transaction::close();
-        //enviar o email para o usuario aqui
-        $_SESSION["msg"] = Mensagem::create_msg("Usuario cadastrado com Sucesso!","alert-success");
+
+        //$_SESSION["msg"] = Mensagem::create_msg("Usuario cadastrado com Sucesso!","alert-success");
+
+        $this->create( new Message("Usuario cadastrado com Sucesso!","alert-success"));
 
         $email = new Email();
         $email->emailDestino = $usuario->email;

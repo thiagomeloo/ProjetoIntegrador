@@ -29,7 +29,7 @@
                         </form>
                     </div>
                     <div class="login-response has-error"></div>
-                    <?php use Ifnc\Tads\Helper\Mensagem; Mensagem::exibe_msg(); ?>
+                    <?php use Ifnc\Tads\Helper\Flash; Flash::showAll(); ?>
             </div>
             </div>
         </div>

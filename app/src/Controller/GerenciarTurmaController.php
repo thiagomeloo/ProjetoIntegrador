@@ -1,13 +1,12 @@
 <?php
 
-namespace Ifnc\Tads\Controller;
 
+namespace Ifnc\Tads\Controller;
 
 use Ifnc\Tads\Entity\Usuario;
 use Ifnc\Tads\Helper\Render;
 
-class GerenciarAdminController implements IController
-
+class GerenciarTurmaController implements IController
 {
 
     public function request(): void
@@ -17,14 +16,15 @@ class GerenciarAdminController implements IController
             [
 
                 "cabecalho.php",
-                "contentGerenciarAdmin.php",
+                "contentGerenciarTurma.php",
                 "rodape.php"
 
             ],
             [
                 "usuario" => Usuario::download(),
-                "titulo"=>"Login",
                 "itens" => $_SESSION["itensMenu"]
             ]);
+
     }
+
 }

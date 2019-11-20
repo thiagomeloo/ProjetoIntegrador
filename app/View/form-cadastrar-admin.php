@@ -2,7 +2,7 @@
     <form method="post" action="/adicionarUsuario">
         <hr>
         <h5 class="font-weight-bold">Dados Pessoais</h5>
-        <hr>
+        <hr class="m-auto">
         <div class="form-group">
 
         </div>
@@ -58,6 +58,8 @@
         </div>
 
 
-        <button type="submit" class="btn bg_color_primary my_FontColor">Cadastrar</button>
+        <button type="submit" class="btn bg_color_secundary btn-lg fas fa-user-plus float-right">
+            Cadastrar
+        </button>
     </form>
 </div>

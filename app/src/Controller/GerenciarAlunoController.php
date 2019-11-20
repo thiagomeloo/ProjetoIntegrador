@@ -22,7 +22,6 @@ class GerenciarAlunoController implements IController
             ],
             [
                 "usuario" => Usuario::download(),
-                "titulo"=>"Login",
                 "itens" => $_SESSION["itensMenu"]
             ]);
 

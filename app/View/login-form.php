@@ -20,7 +20,7 @@
                     <div class="login-form">
                         <form action="/login" method="post">
                             <div class="form-group">
-                                <div class="input-group"><input class="form-control text-center" type="text" id="login-username" name="email" required="" placeholder="E-mail"></div>
+                                <div class="input-group"><input class="form-control text-center" type="email" id="login-username" name="email" required="" placeholder="E-mail"></div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group"><input class="form-control text-center" type="password" name="senha" required="" placeholder="Senha"></div>

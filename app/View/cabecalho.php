@@ -42,8 +42,9 @@
             <ul class="nav navbar-nav text-light">
                 <li class="nav-item" role="presentation"><a class="nav-link active my_FontColor" href="/logout"><i class=""></i><span>SAIR</span></a></li>
             </ul>
-            <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+            <div class="text-center d-none d-md-inline "><button class="btn rounded-circle border-0 " id="sidebarToggle" type="button"></button></div>
         </div>
     </nav>
     <div class="d-flex flex-column" id="content-wrapper">
         <div id="content">
+            <?php use Ifnc\Tads\Helper\Flash; Flash::showAll(); ?>

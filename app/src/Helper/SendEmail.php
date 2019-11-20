@@ -27,7 +27,7 @@ class SendEmail
             $mail->CharSet = 'UTF-8';
             $mail->isHTML(true);
             //Recipients
-            $mail->setFrom('4thiago5@gmail.com', 'Sistema Web Escolar');
+            $mail->setFrom('sistemawebescolar@gmail.com', 'Sistema Web Escolar');
             $mail->addAddress($email->emailDestino, $email->nome);     // quem vai receber o email
             // Content     // Set phpmailer format to HTML
             $mail->Subject = $email->titulo;

@@ -20,7 +20,7 @@ class MainController implements IController
                 $itens = array("itens" =>
                     array( "url" => '/gerenciarAluno', "icone" => 'ico1', "nome" => 'GERENCIAR ALUNO'),
                     array( "url" => '/gerenciarProfessor', "icone" => 'ico2', "nome" => 'GERENCIAR PROFESSOR'),
-                    array( "url" => '/main', "icone" => 'ico2', "nome" => 'GERENCIAR TURMA'),
+                    array( "url" => '/gerenciarTurma', "icone" => 'ico2', "nome" => 'GERENCIAR TURMA'),
                     array( "url" => '/gerenciarAdmin', "icone" => 'ico3', "nome" => 'GERENCIAR ADMIN')
                 );
                 break;

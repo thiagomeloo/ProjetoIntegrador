@@ -1,5 +1,5 @@
 .bg-gradient-primary {
-  background-image: linear-gradient(180deg, #9ea99e 50%,#000000);
+  background-image: linear-gradient(180turn,#9ea99e,#ec6121);
   /*background-image: linear-gradient(180deg,#3C3F41 10%,#3C3F41);*/
   background-size: cover;
 }
@@ -12,5 +12,13 @@
 .bg_color_primary{
   background-color: #9ea99e;
   color:#FFF;
+}
+.bg_color_secundary{
+  background-color: #ec6121;
+  color:#FFF;
+}
+
+.margin_topo{
+  margin-top: 3%;
 }
 

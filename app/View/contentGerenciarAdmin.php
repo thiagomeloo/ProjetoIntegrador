@@ -1,8 +1,8 @@
  <div class="container-fluid">
      <div class="d-sm-flex justify-content-between align-items-center mb-4 margin_topo">
-         <h3 class="text-dark">Gerenciar Admin</h3>
-         <a class="btn bg_color_secundary btn-lg fas fa-user-plus" role="button" href="/cadastrarAdmin"> Cadastrar </a>
-     </div>
+         <h3 class="my_FontColor">Gerenciar Admin</h3>
+         <a class="btn btn-lg fas fa-user-plus bg_color_btn my_FontColor" role="button" href="/cadastrarAdmin"> Cadastrar </a>
+ </div>
 
      <div class="row">
          <div class="col-md-6 col-xl-4 mb-4">
@@ -45,7 +45,7 @@
              </div>
          </div>
      </div>
-    <div class="table-responsive table-overflow" style="max-height: 50vh">
+    <div class="table-responsive table-overflow tb_container" style="max-height: 50vh ;">
          <table class="table">
              <thead>
              <tr>
@@ -58,36 +58,24 @@
              </tr>
              </thead>
              <tbody>
+
+             <?php foreach($administradores as $admin){ ?>
              <tr>
-                 <th scope="row">1</th>
-                 <td>Thiago</td>
-                 <td>0000</td>
-                 <td>00/00/0000</td>
-                 <td>admin@tads.com</td>
+                 <th scope="row"><?=$admin->id?></th>
+                 <td><?=$admin->nome?></td>
+                 <td><?=$admin->cpf?></td>
+                 <td><?=$admin->data_nascimento?></td>
+                 <td><?=$admin->email?></td>
                  <td>
-                     <div class="btn btn-circle bg_color_secundary">
-                         <a class="btn fas fa-user-edit fa-1x"></a>
-                     </div>
-                     <div class="btn btn-circle bg_color_secundary">
-                         <a class="btn fas fa-user-times fa-1x"></a>
-                     </div>
+                     <a class="btn btn-circle bg_color_btn" href="\editar-admin-form?id=<?=$admin->id?>">
+                         <i class="btn fas fa-user-edit fa-1x my_FontColor"></i>
+                     </a>
+                     <a class="btn btn-circle bg_color_btn" href="\desativa-admin-form?id=<?=$admin->id?>">
+                         <i class="btn fas fa-user-times fa-1x my_FontColor"></i>
+                     </a>
                  </td>
              </tr>
-             <tr>
-                 <th scope="row">1</th>
-                 <td>Thiago</td>
-                 <td>0000</td>
-                 <td>00/00/0000</td>
-                 <td>admin@tads.com</td>
-                 <td>
-                     <div class="btn btn-circle bg_color_secundary">
-                         <a class="btn fas fa-user-edit fa-1x"></a>
-                     </div>
-                     <div class="btn btn-circle bg_color_secundary">
-                         <a class="btn fas fa-user-times fa-1x"></a>
-                     </div>
-                 </td>
-             </tr>
+             <?php } ?>
              </tbody>
          </table>
     </div>

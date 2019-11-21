@@ -13,13 +13,13 @@
 
 <body id="page-top">
 <div id="wrapper">
-    <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
-        <div class="container-fluid d-flex flex-column p-0">
+    <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg_color_primary p-0">
+        <div class="container-fluid d-flex flex-column p-0 pt-2">
             <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="/main">
-                <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
-                <div class="sidebar-brand-text mx-3 my_FontColor"><span>S W E</span></div>
+                <div class="sidebar-brand-icon"><img class="m-auto img-fluid " src="assets/img/logo.png"></div>
+
             </a>
-            <hr class="sidebar-divider my-0">
+            <hr class="sidebar-divider">
             <ul class="nav navbar-nav text-light">
                 <li class="nav-item" role="presentation">
                     <a class="nav-link active" href=""><i class=""></i>
@@ -35,14 +35,14 @@
             <?php
             foreach ($itens as $key => $value){ ?>
             <ul class="nav navbar-nav text-light">
-                <li class="nav-item" role="presentation"><a class="nav-link active my_FontColor" href="<?=$value['url']?>"><i class=""></i><span><?=$value['nome']?></span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active my_FontColor fa <?=$value['icone']?>" href="<?=$value['url']?>" aria-hidden="true"><i class=""></i><span><?=$value['nome']?></span></a></li>
             </ul>
 
             <?php } ?>
             <ul class="nav navbar-nav text-light">
-                <li class="nav-item" role="presentation"><a class="nav-link active my_FontColor" href="/logout"><i class=""></i><span>SAIR</span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active my_FontColor fa fa-sign-out-alt text-danger" href="/logout"><i class=""></i><span>SAIR</span></a></li>
             </ul>
-            <div class="text-center d-none d-md-inline "><button class="btn rounded-circle border-0 " id="sidebarToggle" type="button"></button></div>
+            <div class="text-center d-none d-md-inline "><button class="btn rounded-circle border-1" id="sidebarToggle" type="button"></button></div>
         </div>
     </nav>
     <div class="d-flex flex-column" id="content-wrapper">

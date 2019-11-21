@@ -8,17 +8,67 @@
   text-shadow: 0 0 0.2em #000, 0 0 0.2em #000, 0 0 0.2em #000;
   color:#FFF;
 }
+.borda_rodape{
+
+  border-top-style: solid;
+  border-color: #454545;
+}
 
 .bg_color_primary{
-  background-color: #9ea99e;
+  background-color: #2b2b2b;
   color:#FFF;
 }
 .bg_color_secundary{
-  background-color: #ec6121;
+  background-color: #606060;
   color:#FFF;
 }
 
+.bg_color_btn{
+  background-color: #3C3F41;
+  color: #FFFFFF;
+}
+hr{
+  border-color: #606060;
+}
 .margin_topo{
   margin-top: 3%;
 }
+body::-webkit-scrollbar-track {
+  background-color: #F4F4F4;
+}
+body::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background: #F4F4F4;
+}
+body::-webkit-scrollbar-thumb:vertical {
+  height: 2px;
+  background: #dad7d7;
+  -webkit-border-radius: 1px;
+}
 
+body::-webkit-scrollbar-thumb:horizontal {
+  width: 2px;
+  height: 2px;
+  background: #dad7d7;
+}
+
+.tb_container::-webkit-scrollbar-track {
+  background-color: #F4F4F4;
+}
+.tb_container::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background: #F4F4F4;
+}
+.tb_container::-webkit-scrollbar-thumb:vertical {
+  height: 2px;
+  background: #dad7d7;
+  -webkit-border-radius: 1px;
+}
+
+.tb_container::-webkit-scrollbar-thumb:horizontal {
+  width: 2px;
+  height: 2px;
+  background: #dad7d7;
+}

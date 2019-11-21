@@ -5,6 +5,7 @@ namespace Ifnc\Tads\Controller;
 
 use Ifnc\Tads\Entity\Usuario;
 use Ifnc\Tads\Helper\Render;
+use Ifnc\Tads\Helper\Transaction;
 
 class GerenciarAdminController implements IController
 
@@ -12,7 +13,7 @@ class GerenciarAdminController implements IController
 
     public function request(): void
     {
-
+        Transaction::open();
         echo Render::html(
             [
 
@@ -23,8 +24,9 @@ class GerenciarAdminController implements IController
             ],
             [
                 "usuario" => Usuario::download(),
-                "titulo"=>"Login",
+                "administradores"=> Usuario::all("tipo_user = 1"),
                 "itens" => $_SESSION["itensMenu"]
             ]);
+        Transaction::close();
     }
 }

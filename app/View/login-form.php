@@ -8,6 +8,7 @@
     <title>S W E - Sistema Web Escola</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/login-full-page-bs4.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
 </head>
 
 <body>
@@ -15,8 +16,8 @@
     <div class="container-fluid main-panel">
         <div class="row">
             <div class="col d-flex justify-content-center align-items-center">
-                <div class="login-panel" style="margin-top: 50px;">
-                    <div class="login-user-avatar" style="filter: saturate(150%);"></div>
+                <div class="login-panel" >
+                    <div class="login-user-avatar"></div>
                     <div class="login-form">
                         <form action="/login" method="post">
                             <div class="form-group">
@@ -25,12 +26,22 @@
                             <div class="form-group">
                                 <div class="input-group"><input class="form-control text-center" type="password" name="senha" required="" placeholder="Senha"></div>
                             </div>
-                            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color: rgb(242,99,34);">ENTRAR</button></div>
+                            <div class="form-group"><button class="btn bg_color_primary btn-block my_FontColor" type="submit">ENTRAR</button></div>
                         </form>
                     </div>
+
                     <div class="login-response has-error"></div>
                     <?php use Ifnc\Tads\Helper\Flash; Flash::showAll(); ?>
             </div>
+                <div class="login-panel ladoD float-right text-center bg_color_primary" style="">
+                    <h5 class="my_FontColor">Outros Serviços</h5>
+                    <hr class="text-danger">
+                    <div class="margin-center">
+                        <a class="btn my_FontColor" href=""> Esqueci minha senha </a>
+                        <hr>
+                        <a class="btn  my_FontColor" href=""> Acesso do Responsável </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

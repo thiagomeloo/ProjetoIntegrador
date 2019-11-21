@@ -58,7 +58,7 @@
         </div>
 
 
-        <button type="submit" class="btn bg_color_secundary btn-lg fas fa-user-plus float-right">
+        <button type="submit" class="btn bg_color_secundary btn-lg fas fa-user-plus float-right my_FontColor">
             Cadastrar
         </button>
     </form>

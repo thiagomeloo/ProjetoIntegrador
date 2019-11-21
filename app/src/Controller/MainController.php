@@ -18,10 +18,10 @@ class MainController implements IController
         switch ($usuario->tipo_user){
             case 1:
                 $itens = array("itens" =>
-                    array( "url" => '/gerenciarAluno', "icone" => 'ico1', "nome" => 'GERENCIAR ALUNO'),
-                    array( "url" => '/gerenciarProfessor', "icone" => 'ico2', "nome" => 'GERENCIAR PROFESSOR'),
-                    array( "url" => '/gerenciarTurma', "icone" => 'ico2', "nome" => 'GERENCIAR TURMA'),
-                    array( "url" => '/gerenciarAdmin', "icone" => 'ico3', "nome" => 'GERENCIAR ADMIN')
+                    array( "url" => '/gerenciarAluno', "icone" => 'fa-user-graduate', "nome" => ' GERENCIAR ALUNO '),
+                    array( "url" => '/gerenciarProfessor', "icone" => 'fa-user', "nome" => ' GERENCIAR PROFESSOR '),
+                    array( "url" => '/gerenciarTurma', "icone" => 'fa-pen-square', "nome" => ' GERENCIAR TURMA '),
+                    array( "url" => '/gerenciarAdmin', "icone" => 'fa-user-secret', "nome" => ' GERENCIAR ADMIN ')
                 );
                 break;
             case 2:

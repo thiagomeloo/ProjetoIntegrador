@@ -9,28 +9,29 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label>Nome</label>
-                <input type="text" class="form-control" placeholder="Nome Completo" name="nome">
+                <input type="text" class="form-control" placeholder="Nome Completo" name="nome" required="">
             </div>
             <div class="form-group col-md-6">
                 <label>CPF</label>
-                <input type="text" class="form-control" placeholder="CPF">
+                <input type="text" class="form-control" placeholder="CPF" name="cpf" required="">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label>Email</label>
-                <input type="email" class="form-control" placeholder="Email" name="email">
+                <input type="email" class="form-control" placeholder="Email" name="email" required="">
             </div>
             <div class="form-group col-md-6">
                 <label>Data de Nascimento</label>
-                <input type="date" class="form-control" placeholder="Data de Nascimento">
+
+                <input type="date" class="form-control" name="data_nascimento" required="">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>Numero da Identidade</label>
-                <input type="email" class="form-control" placeholder="Numero da Identidade" name="identidade_numero">
+                <input type="number" class="form-control" placeholder="Numero da Identidade" name="identidade_numero">
             </div>
             <div class="form-group col-md-3">
                 <label>Orgão Expeditor</label>
@@ -42,13 +43,16 @@
             </div>
             <div class="form-group col-md-3">
                 <label>Data da Expedição</label>
-                <input type="text" class="form-control" placeholder="Data da Expedição" name="identidade_data_expedicao">
+                <input type="date" class="form-control" placeholder="Data da Expedição" name="identidade_data_expedicao">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label>Tipo da Certidão</label>
-                <input type="text" class="form-control" placeholder="Numero da Identidade" name="certidao_tipo">
+                <select class="form-control" name="certidao_tipo">
+                    <option value="certidao_nascimento">Certidão de Nascimento</option>
+                    <option value="certidao_casamento">Certidão de Casamento</option>
+                </select>
             </div>
             <div class="form-group col-md-4">
                 <label>Cartório</label>
@@ -70,13 +74,13 @@
             </div>
             <div class="form-group col-md-4">
                 <label>Data de Emissão da Certidão</label>
-                <input type="text" class="form-control" placeholder="Data de Emissão da Certidão" name="certidao_data_emissao">
+                <input type="date" class="form-control" placeholder="Data de Emissão da Certidão" name="certidao_data_emissao">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>Número do Título Eleitor</label>
-                <input type="email" class="form-control" placeholder="Número do Título Eleitor" name="titulo_numero">
+                <input type="number" class="form-control" placeholder="Número do Título Eleitor" name="titulo_numero">
             </div>
             <div class="form-group col-md-3">
                 <label>Zona</label>
@@ -90,6 +94,7 @@
                 <label>UF</label>
                 <input type="text" class="form-control" placeholder="UF" name="titulo_uf">
             </div>
+            <input type="number" class="d-none" name="tipo_user" value="1">
         </div>
 
         <hr>

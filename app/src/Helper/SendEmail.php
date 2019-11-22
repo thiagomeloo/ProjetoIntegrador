@@ -12,7 +12,7 @@ require '../vendor/autoload.php';
 
 class SendEmail
 {
-    public function __construct($email){
+    public static function send($email){
         $mail = new PHPMailer(true);
         try {
             //Server settings
@@ -33,9 +33,9 @@ class SendEmail
             $mail->Subject = $email->titulo;
             $mail->Body    = $email->conteudo;
             $mail->send();
-            echo 'Message has been sent';
+            return 0;
         } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            return 1;
         }
     }
 }

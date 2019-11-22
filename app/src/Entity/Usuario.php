@@ -13,12 +13,8 @@ class Usuario extends Record
     public $nome;
     public $email;
     public $senha;
-    public $data_de_nascimento;
+    public $data_nascimento;
     public $cpf;
-    public $titulo_numero;
-    public $titulo_zona;
-    public $titulo_secao;
-    public $titulo_uf;
     public $identidade_numero;
     public $identidade_orgao_expeditor;
     public $identidade_uf;
@@ -29,6 +25,10 @@ class Usuario extends Record
     public $certidao_folha;
     public $certidao_livro;
     public $certidao_data_emissao;
+    public $titulo_numero;
+    public $titulo_zona;
+    public $titulo_secao;
+    public $titulo_uf;
     public $tipo_user;
     public $status_user;
 
@@ -40,10 +40,10 @@ class Usuario extends Record
 
     public function __sleep(){
 
-        return array('id','nome','email','data_nascimento','cpf','titulo_numero','titulo_zona',
-            'titulo_secao','titulo_uf','identidade_numero','identidade_orgao_expeditor','identidade_uf',
+        return array('id','nome','email','data_nascimento','cpf','identidade_numero','identidade_orgao_expeditor','identidade_uf',
             'identidade_data_expedicao','certidao_tipo','certidao_cartorio','certidao_numero_de_termo',
-            'certidao_folha','certidao_livro','certidao_data_emissao','tipo_user','status_user');
+            'certidao_folha','certidao_livro','certidao_data_emissao','titulo_numero','titulo_zona',
+            'titulo_secao','titulo_uf','tipo_user','status_user');
 
     }
 }

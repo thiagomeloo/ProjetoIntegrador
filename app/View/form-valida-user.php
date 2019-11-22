@@ -7,6 +7,7 @@
     <title>S W E - Sistema Web Escola</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/login-full-page-bs4.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
 </head>
 
 <body>
@@ -21,7 +22,7 @@
                                 <div class="input-group"><input readonly class="form-control-plaintext text-center" type="text" id="login-username" value="<?=$_GET['email']?>" name="email" required=""></div>
                                 <div class="input-group"><input class="form-control text-center" type="text" name="codigo" required="" placeholder="Codigo de Validação"></div>
                                 <div class="input-group"><input class="form-control text-center" type="text" name="senha" required="" placeholder="Senha"></div>
-                                <button class="btn btn-primary btn-block mt-2" type="submit" style="background-color: rgb(242,99,34);">VALIDAR CONTA</button>
+                                <div class="form-group"><button class="btn bg_color_primary btn-block my_FontColor mt-2" type="submit">VALIDAR CONTA</button></div>
                             </div>
                         </form>
                     </div>

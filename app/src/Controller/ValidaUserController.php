@@ -22,7 +22,7 @@ class ValidaUserController implements IController
 
             exit();
         }
-        $usuario->status = 1;
+        $usuario->status_user = 1;
         $usuario->senha = password_hash($_POST['senha'], PASSWORD_ARGON2I);
         $usuario->store();
         Transaction::close();

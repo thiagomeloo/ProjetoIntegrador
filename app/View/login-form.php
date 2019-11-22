@@ -35,7 +35,7 @@
             </div>
                 <div class="login-panel ladoD float-right text-center bg_color_primary" style="">
                     <h5 class="my_FontColor">Outros Serviços</h5>
-                    <hr class="text-danger">
+                    <hr>
                     <div class="margin-center">
                         <a class="btn my_FontColor" href=""> Esqueci minha senha </a>
                         <hr>

@@ -27,6 +27,71 @@
             </div>
         </div>
 
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label>Numero da Identidade</label>
+                <input type="email" class="form-control" placeholder="Numero da Identidade" name="identidade_numero">
+            </div>
+            <div class="form-group col-md-3">
+                <label>Orgão Expeditor</label>
+                <input type="text" class="form-control" placeholder="Orgão Expeditor" name="identidade_orgao_expeditor">
+            </div>
+            <div class="form-group col-md-3">
+                <label>UF</label>
+                <input type="text" class="form-control" placeholder="UF" name="identidade_uf">
+            </div>
+            <div class="form-group col-md-3">
+                <label>Data da Expedição</label>
+                <input type="text" class="form-control" placeholder="Data da Expedição" name="identidade_data_expedicao">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label>Tipo da Certidão</label>
+                <input type="text" class="form-control" placeholder="Numero da Identidade" name="certidao_tipo">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Cartório</label>
+                <input type="text" class="form-control" placeholder="Cartório" name="certidao_cartorio">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Numero de Termo</label>
+                <input type="text" class="form-control" placeholder="Numero de Termo" name="certidao_numero_de_termo">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label>Folha</label>
+                <input type="text" class="form-control" placeholder="Folha" name="certidao_folha">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Livro</label>
+                <input type="text" class="form-control" placeholder="Livro" name="certidao_livro">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Data de Emissão da Certidão</label>
+                <input type="text" class="form-control" placeholder="Data de Emissão da Certidão" name="certidao_data_emissao">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label>Número do Título Eleitor</label>
+                <input type="email" class="form-control" placeholder="Número do Título Eleitor" name="titulo_numero">
+            </div>
+            <div class="form-group col-md-3">
+                <label>Zona</label>
+                <input type="text" class="form-control" placeholder="Zona" name="titulo_zona">
+            </div>
+            <div class="form-group col-md-3">
+                <label>Seção</label>
+                <input type="text" class="form-control" placeholder="Seção" name="titulo_secao">
+            </div>
+            <div class="form-group col-md-3">
+                <label>UF</label>
+                <input type="text" class="form-control" placeholder="UF" name="titulo_uf">
+            </div>
+        </div>
+
         <hr>
         <h5 class="font-weight-bold">Endereço</h5>
         <hr>

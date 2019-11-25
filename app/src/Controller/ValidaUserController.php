@@ -13,6 +13,9 @@ class ValidaUserController implements IController
 
     public function request(): void
     {
+        if(!isset($_POST['email']) || $_POST['email'] == null){
+            header("Location: /login-form", true, 302);
+        }
         Transaction::open();
         $usuario = Usuario::findByCondition("email='{$_POST['email']}'");
         if (!$usuario || !$usuario->valide($_POST['codigo'])) {

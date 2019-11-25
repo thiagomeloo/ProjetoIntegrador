@@ -9,6 +9,7 @@
 /gerenciarAdmin: GerenciarAdminController
 /gerenciarTurma: GerenciarTurmaController
 /cadastrarAdmin: CadastrarAdminController
-/adicionarUsuario: AdicionarUsuarioController
+/storeUsuario: StoreUsuarioController
+/editarUsuario: EditarUsuarioFormController
 /formValidaUser: FormValidaUserController
 /validaUser: ValidaUserController

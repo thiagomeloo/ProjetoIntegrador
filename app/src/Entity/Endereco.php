@@ -9,6 +9,13 @@ use Ifnc\Tads\Helper\Session;
 class Endereco extends Record
 {
     public $id;
+    public $rua;
+    public $numero;
+    public $bairro;
+    public $cidade;
+    public $estado;
+    public $cep;
+
 
     use Session;
 

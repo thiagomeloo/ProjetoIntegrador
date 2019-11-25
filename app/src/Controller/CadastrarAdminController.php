@@ -17,12 +17,13 @@ class CadastrarAdminController implements IController
             [
 
                 "cabecalho.php",
-                "form-cadastrar-admin.php",
+                "form-store-usuario.php",
                 "rodape.php"
 
             ],
             [
                 "usuario" => Usuario::download(),
+                "name_btn" => "Cadastrar",
                 "itens" => $_SESSION["itensMenu"]
             ]);
     }

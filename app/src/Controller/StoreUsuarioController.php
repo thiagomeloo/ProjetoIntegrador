@@ -1,6 +1,7 @@
 <?php
 namespace Ifnc\Tads\Controller;
 
+use Ifnc\Tads\Entity\Endereco;
 use Ifnc\Tads\Entity\Usuario;
 use Ifnc\Tads\Helper\Email;
 use Ifnc\Tads\Helper\Flash;
@@ -10,14 +11,26 @@ use Ifnc\Tads\Helper\Transaction;
 use Ifnc\Tads\Helper\Util;
 
 
-class AdicionarUsuarioController implements IController
+class StoreUsuarioController implements IController
 {
     use Flash;
 
     public function request(): void
     {
-        $usuario = new Usuario();
+        Transaction::open();
+        $endereco = new Endereco();
+        $endereco->id = $_POST['id_endereco'];
+        $endereco->rua = $_POST['rua'];
+        $endereco->numero = $_POST['numero'];
+        $endereco->bairro = $_POST['bairro'];
+        $endereco->cidade = $_POST['cidade'];
+        $endereco->estado = $_POST['estado'];
+        $endereco->cep = $_POST['cep'];
+        $endereco->store();
 
+
+        $usuario = new Usuario();
+        $usuario->id = $_POST['id'];
         $usuario->nome = $_POST['nome'];
         $usuario->email = $_POST['email'];
         $usuario->cpf = $_POST['cpf'];
@@ -45,23 +58,28 @@ class AdicionarUsuarioController implements IController
 
         $usuario->tipo_user = $_POST['tipo_user'] ;
         $usuario->status_user = 0;
+        if(isset($_POST['id_endereco']) && $_POST['id_endereco'] != null){
+            $usuario->id_endereco = $_POST['id_endereco'];
+        }else{
+            $usuario->id_endereco = $endereco->id;
+        }
+
+
+
 
         $senha =Util::random_key(8);
         $usuario->senha = password_hash($senha, PASSWORD_ARGON2I);
 
 
 
-
-        Transaction::open();
-
         $consulta_usuario = Usuario::findByCondition("email='{$_POST['email']}'");
-        if($consulta_usuario != null){
+        if($consulta_usuario != null && $usuario->id == null){
 
             $this->create( new Message("Ops, Já existe um usuario cadastrado com esse email!","alert-danger"));
-            $var = "<script>javascript:history.back(-2)</script>";
-            echo $var;
+            echo "<script>javascript:history.back(-2)</script>";
 
-        }else{
+
+        }else if($usuario->id == null){
 
             $usuario->store();
             $this->create( new Message("Usuario cadastrado com Sucesso!","alert-success"));
@@ -83,6 +101,10 @@ class AdicionarUsuarioController implements IController
             }
             header('Location: /main', true, 302);
 
+        }else if($usuario->id != null){
+            $usuario->store();
+            $this->create( new Message("Usuario atualizado com Sucesso!","alert-success"));
+            header('Location: /main', true, 302);
         }
 
         Transaction::close();

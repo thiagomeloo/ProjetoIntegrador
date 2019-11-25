@@ -30,7 +30,7 @@ abstract class Record
         if ($conn = Transaction::get()) {
             $result = $conn->exec($sql);
             $this->id = $conn->lastInsertId();
-            echo $conn->lastInsertId();
+            //echo $conn->lastInsertId();
             if(empty($this->id)){
 
             }
@@ -89,6 +89,22 @@ abstract class Record
 
         if ($conn = Transaction::get()) {
             return $conn->query($sql)->fetchAll(PDO::FETCH_CLASS,get_called_class());
+        }
+        else {
+            throw new Exception('Não há transação ativa!!');
+        }
+
+    }
+    public static function count($filter = NULL)
+    {
+        $rc = new ReflectionClass(get_called_class());
+        $sql = "SELECT COUNT(*) FROM {$rc->getShortName()}";
+        if($filter){
+            $sql .= " WHERE {$filter}";
+        }
+
+        if ($conn = Transaction::get()) {
+            return $conn->query($sql)->fetchColumn();
         }
         else {
             throw new Exception('Não há transação ativa!!');

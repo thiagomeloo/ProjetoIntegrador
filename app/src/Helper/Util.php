@@ -12,4 +12,8 @@ class Util
         return substr(str_shuffle($letters), 0, $chars);
     }
 
+    public static function data($data){
+        return date("d/m/Y", strtotime($data));
+    }
+
 }

@@ -31,6 +31,7 @@ class Usuario extends Record
     public $titulo_uf;
     public $tipo_user;
     public $status_user;
+    public $id_endereco;
 
     use Session;
 
@@ -43,7 +44,7 @@ class Usuario extends Record
         return array('id','nome','email','data_nascimento','cpf','identidade_numero','identidade_orgao_expeditor','identidade_uf',
             'identidade_data_expedicao','certidao_tipo','certidao_cartorio','certidao_numero_de_termo',
             'certidao_folha','certidao_livro','certidao_data_emissao','titulo_numero','titulo_zona',
-            'titulo_secao','titulo_uf','tipo_user','status_user');
+            'titulo_secao','titulo_uf','tipo_user','status_user','id_endereco');
 
     }
 }

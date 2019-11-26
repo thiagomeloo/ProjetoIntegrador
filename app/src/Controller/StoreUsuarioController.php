@@ -73,7 +73,7 @@ class StoreUsuarioController implements IController
 
 
         $consulta_usuario = Usuario::findByCondition("email='{$_POST['email']}'");
-        if($consulta_usuario != null && $usuario->id == null){
+        if($consulta_usuario != null && $usuario->id != $consulta_usuario->id){
 
             $this->create( new Message("Ops, Já existe um usuario cadastrado com esse email!","alert-danger"));
             echo "<script>javascript:history.back(-2)</script>";

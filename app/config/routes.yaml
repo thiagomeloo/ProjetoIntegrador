@@ -11,5 +11,6 @@
 /cadastrarAdmin: CadastrarAdminController
 /storeUsuario: StoreUsuarioController
 /editarUsuario: EditarUsuarioFormController
+/deletarUsuario: DeletarUsuarioController
 /formValidaUser: FormValidaUserController
 /validaUser: ValidaUserController

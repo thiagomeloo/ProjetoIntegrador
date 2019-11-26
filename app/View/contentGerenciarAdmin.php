@@ -98,7 +98,7 @@ use Ifnc\Tads\Helper\Util;
                      <a class="btn btn-circle bg_color_btn" href="\editarUsuario?id=<?=$admin->id?>">
                          <i class="btn fas fa-user-edit fa-1x my_FontColor"></i>
                      </a>
-                     <a class="btn btn-circle bg_color_btn" href="\desativa-admin-form?id=<?=$admin->id?>">
+                     <a class="btn btn-circle bg_color_btn" id="btnDelete" href="/deletarUsuario?id='<?=$admin->id?>'" onclick='confirmDelete("/deletarUsuario?id=<?=$admin->id?>")' data-toggle="modal" data-target="#ExemploModalCentralizado">
                          <i class="btn fas fa-user-times fa-1x my_FontColor"></i>
                      </a>
                  </td>
@@ -108,3 +108,27 @@ use Ifnc\Tads\Helper\Util;
          </table>
     </div>
  </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade " id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content card">
+            <div class="modal-header">
+                <h5 class="modal-title text-danger" id="TituloModalCentralizado">AVISO !</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-danger">
+                Tem certeza que deseja excluir ?<br>
+                Após a exclusão, n será possível reverter a ação.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cancelar</button>
+                <a class="btn btn-outline-danger" id="btnConfirmDel">Confirmar</a>
+            </div>
+        </div>
+    </div>
+</div>

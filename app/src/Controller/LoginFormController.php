@@ -4,6 +4,7 @@
 namespace Ifnc\Tads\Controller;
 
 
+use Ifnc\Tads\Entity\Usuario;
 use Ifnc\Tads\Helper\Render;
 
 class LoginFormController implements IController
@@ -11,14 +12,21 @@ class LoginFormController implements IController
 
     public function request(): void
     {
-        echo Render::html(
-            [
+        $usuario = Usuario::download();
+        if($usuario != null){
+            header('Location: /main', true, 302);
 
-                "login-form.php",
+        }else{
+            echo Render::html(
+                [
 
-            ],
-            [
-                "titulo"=>"Login"
-            ]);
+                    "login-form.php",
+
+                ],
+                [
+                    "titulo"=>"Login"
+                ]);
+        }
+
     }
 }

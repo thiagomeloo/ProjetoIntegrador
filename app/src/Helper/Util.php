@@ -16,4 +16,22 @@ class Util
         return date("d/m/Y", strtotime($data));
     }
 
+    public static function redirect($id){
+        switch ($id){
+            case 1:
+                header('Location: /gerenciarAdmin', true, 302);
+                break;
+            case 2:
+                header('Location: /gerenciarProfessor', true, 302);
+                break;
+            case 3:
+                header('Location: /gerenciarAluno', true, 302);
+                break;
+            default:
+                header('Location: /main', true, 302);
+
+        }
+
+    }
+
 }

@@ -5,8 +5,8 @@ use Ifnc\Tads\Helper\Util;
 ?>
 <div class="container-fluid">
      <div class="d-sm-flex justify-content-between align-items-center mb-4 margin_topo">
-         <h3 class="my_FontColor">Gerenciar Admin</h3>
-         <a class="btn btn-lg fas fa-user-plus bg_color_btn my_FontColor" role="button" href="/cadastrarAdmin"> Cadastrar </a>
+         <h3 class="my_FontColor"><?= $nomePag ?></h3>
+         <a class="btn btn-lg fas fa-user-plus bg_color_btn my_FontColor" role="button" href="<?= $urlCadastrar ?>"> Cadastrar </a>
  </div>
 
      <div class="row">
@@ -15,8 +15,8 @@ use Ifnc\Tads\Helper\Util;
                  <div class="card-body">
                      <div class="row align-items-center no-gutters">
                          <div class="col mr-2">
-                             <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span>Administradores ativos</span></div>
-                             <div class="text-dark font-weight-bold h5 mb-0"><span><?=$qtdAdmAtivo?></span></div>
+                             <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span><?= $entidade ?> ativos</span></div>
+                             <div class="text-dark font-weight-bold h5 mb-0"><span><?=$qtdAtivo?></span></div>
                          </div>
                          <div class="col-auto"><i class="fas fa-user-check fa-2x text-gray-300"></i></div>
                      </div>
@@ -29,8 +29,8 @@ use Ifnc\Tads\Helper\Util;
                  <div class="card-body">
                      <div class="row align-items-center no-gutters">
                          <div class="col mr-2">
-                             <div class="text-uppercase text-danger font-weight-bold text-xs mb-1"><span>Administradores inativos</span></div>
-                             <div class="text-dark font-weight-bold h5 mb-0"><span><?=$qtdAdmInativo?></span></div>
+                             <div class="text-uppercase text-danger font-weight-bold text-xs mb-1"><span><?= $entidade ?> inativos</span></div>
+                             <div class="text-dark font-weight-bold h5 mb-0"><span><?=$qtdInativo?></span></div>
                          </div>
                          <div class="col-auto"><i class="fas fa-user-times fa-2x text-gray-300"></i></div>
                      </div>
@@ -41,8 +41,8 @@ use Ifnc\Tads\Helper\Util;
                  <div class="card-body">
                      <div class="row align-items-center no-gutters">
                          <div class="col mr-2">
-                             <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>Total de Administradores</span></div>
-                             <div class="text-dark font-weight-bold h5 mb-0"><span><?=$qtdAdmTotal?></span></div>
+                             <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>Total de <?= $entidade ?></span></div>
+                             <div class="text-dark font-weight-bold h5 mb-0"><span><?=$qtdTotal?></span></div>
                          </div>
                          <div class="col-auto"><i class="fas fa-users fa-2x text-gray-300"></i></div>
                      </div>
@@ -87,18 +87,18 @@ use Ifnc\Tads\Helper\Util;
 
              <?php
 
-             foreach($administradores as $admin){ ?>
+             foreach($usuariosArray as $usuarioArray){ ?>
              <tr>
-                 <th scope="row"><?=$admin->id?></th>
-                 <td><?=$admin->nome != null ? $admin->nome : ''?></td>
-                 <td><?=$admin->cpf != null ? $admin->cpf : ''?></td>
-                 <td><?=$admin->data_nascimento != null ? Util::data($admin->data_nascimento) : ''?></td>
-                 <td><?=$admin->email != null ? $admin->email : ''?></td>
+                 <th scope="row"><?=$usuarioArray->id?></th>
+                 <td><?=$usuarioArray->nome != null ? $usuarioArray->nome : ''?></td>
+                 <td><?=$usuarioArray->cpf != null ? $usuarioArray->cpf : ''?></td>
+                 <td><?=$usuarioArray->data_nascimento != null ? Util::data($usuarioArray->data_nascimento) : ''?></td>
+                 <td><?=$usuarioArray->email != null ? $usuarioArray->email : ''?></td>
                  <td>
-                     <a class="btn btn-circle bg_color_btn" href="\editarUsuario?id=<?=$admin->id?>">
+                     <a class="btn btn-circle bg_color_btn" href="\editarUsuario?id=<?=$usuarioArray->id?>">
                          <i class="btn fas fa-user-edit fa-1x my_FontColor"></i>
                      </a>
-                     <a class="btn btn-circle bg_color_btn" id="btnDelete" href="/deletarUsuario?id='<?=$admin->id?>'" onclick='confirmDelete("/deletarUsuario?id=<?=$admin->id?>")' data-toggle="modal" data-target="#ExemploModalCentralizado">
+                     <a class="btn btn-circle bg_color_btn" id="btnDelete" href="/deletarUsuario?id='<?=$usuarioArray->id?>'" onclick='confirmDelete("/deletarUsuario?id=<?=$usuarioArray->id?>")' data-toggle="modal" data-target="#ExemploModalCentralizado">
                          <i class="btn fas fa-user-times fa-1x my_FontColor"></i>
                      </a>
                  </td>

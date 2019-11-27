@@ -6,6 +6,7 @@ use Ifnc\Tads\Entity\Usuario;
 use Ifnc\Tads\Helper\Flash;
 use Ifnc\Tads\Helper\Message;
 use Ifnc\Tads\Helper\Transaction;
+use Ifnc\Tads\Helper\Util;
 
 
 class DeletarUsuarioController implements IController
@@ -32,7 +33,7 @@ class DeletarUsuarioController implements IController
 
         }
         Transaction::close();
-        header('Location: /main', true, 302);
+        Util::redirect($user->tipo_user);
 
         //header('Location: /main', true, 302);
     }

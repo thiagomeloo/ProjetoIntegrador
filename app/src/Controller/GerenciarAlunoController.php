@@ -18,7 +18,7 @@ class GerenciarAlunoController implements IController
             [
 
                 "cabecalho.php",
-                "contentGerenciarAluno.php",
+
                 "rodape.php"
 
             ],

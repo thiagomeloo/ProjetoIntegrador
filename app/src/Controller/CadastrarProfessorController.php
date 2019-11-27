@@ -1,34 +1,31 @@
 <?php
 
-
 namespace Ifnc\Tads\Controller;
 
-use Ifnc\Tads\Entity\Turma;
+
 use Ifnc\Tads\Entity\Usuario;
 use Ifnc\Tads\Helper\Render;
-use Ifnc\Tads\Helper\Transaction;
 
-class GerenciarTurmaController implements IController
+class CadastrarProfessorController implements IController
+
 {
 
     public function request(): void
     {
-        Transaction::open();
+
         echo Render::html(
             [
 
                 "cabecalho.php",
-                "contentGerenciarTurma.php",
+                "form-store-usuario.php",
                 "rodape.php"
 
             ],
             [
                 "usuario" => Usuario::download(),
-                "turmas" => Turma::all(),
+                "name_btn" => "Cadastrar",
                 "itens" => $_SESSION["itensMenu"],
-                "qtdTurma" => 10
+                "tpUser" => 2
             ]);
-        Transaction::close();
     }
-
 }

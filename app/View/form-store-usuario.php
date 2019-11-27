@@ -95,7 +95,7 @@
                 <label>UF</label>
                 <input type="text" class="form-control" placeholder="UF" name="titulo_uf" value="<?=isset($usuarioAtt) ? $usuarioAtt->titulo_uf : ''?>">
             </div>
-            <input type="number" class="d-none" name="tipo_user" value="<?=isset($usuarioAtt) ? $usuarioAtt->tipo_user : '1'?>">
+            <input type="number" class="d-none" name="tipo_user" value="<?=isset($usuarioAtt) ? $usuarioAtt->tipo_user : $tpUser?>">
             <input type="number" class="d-none" name="id" value="<?=isset($usuarioAtt) ? $usuarioAtt->id : ''?>" >
         </div>
 

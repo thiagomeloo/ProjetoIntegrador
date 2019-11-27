@@ -18,17 +18,20 @@ class GerenciarAdminController implements IController
             [
 
                 "cabecalho.php",
-                "contentGerenciarAdmin.php",
+                "contentGerenciarUsuario.php",
                 "rodape.php"
 
             ],
             [
                 "usuario" => Usuario::download(),
-                "administradores"=> Usuario::all("tipo_user = 1"),
+                "nomePag" => "Gerenciar Admin",
+                "urlCadastrar" => "/cadastrarAdmin",
+                "entidade" => "Administradores",
+                "usuariosArray"=> Usuario::all("tipo_user = 1"),
                 "itens" => $_SESSION["itensMenu"],
-                "qtdAdmAtivo" => Usuario::count("tipo_user = 1 and status_user = 1"),
-                "qtdAdmInativo" => Usuario::count("tipo_user = 1 and status_user != 1"),
-                "qtdAdmTotal" => Usuario::count()
+                "qtdAtivo" => Usuario::count("tipo_user = 1 and status_user = 1"),
+                "qtdInativo" => Usuario::count("tipo_user = 1 and status_user != 1"),
+                "qtdTotal" => Usuario::count()
             ]);
         Transaction::close();
     }

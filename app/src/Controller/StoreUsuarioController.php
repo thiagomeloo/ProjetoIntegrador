@@ -99,12 +99,12 @@ class StoreUsuarioController implements IController
             }else if($em == 1){
                 $this->create( new Message("Erro no envio do email, Para validação do usuario repasse o seguinte codigo: $senha","alert-danger"));
             }
-            header('Location: /main', true, 302);
+            Util::redirect($usuario->tipo_user);
 
         }else if($usuario->id != null){
             $usuario->store();
             $this->create( new Message("Usuario atualizado com Sucesso!","alert-success"));
-            header('Location: /main', true, 302);
+            Util::redirect($usuario->tipo_user);
         }
 
         Transaction::close();

@@ -4,13 +4,27 @@
 /logout:  LogoutController
 /404found:  path404Controller
 /main: MainController
-/gerenciarAluno: GerenciarAlunoController
-/gerenciarProfessor: GerenciarProfessorController
-/gerenciarAdmin: GerenciarAdminController
-/gerenciarTurma: GerenciarTurmaController
-/cadastrarAdmin: CadastrarAdminController
+
 /storeUsuario: StoreUsuarioController
 /editarUsuario: EditarUsuarioFormController
 /deletarUsuario: DeletarUsuarioController
+
 /formValidaUser: FormValidaUserController
 /validaUser: ValidaUserController
+
+
+
+/gerenciarAdmin: GerenciarAdminController
+/cadastrarAdmin: CadastrarAdminController
+
+/gerenciarProfessor: GerenciarProfessorController
+/cadastrarProfessor: CadastrarProfessorController
+
+/gerenciarAluno: GerenciarAlunoController
+
+/gerenciarTurma: GerenciarTurmaController
+/cadastrarTurma: CadastrarTurmaController
+
+
+
+

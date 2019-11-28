@@ -39,6 +39,13 @@ class LoginController implements IController
             exit();
         }
 
+        if($usuario->status_user != 1){
+
+            $this->create( new Message("Usuário inativo,<br> por favor verifique <br>seu email ou contate um administrador!","alert-danger"));
+            header('Location: /login-form');
+            exit();
+        }
+
         $usuario->upload();
         Transaction::close();
         header('Location: /main');

@@ -29,7 +29,7 @@ trait Flash
 
         $messages = Flash::useAll();
         foreach ($messages as $key => $valor){
-            echo '<div class="row- col- alert sticky-top '.$valor->context.' alert-dismissible fade show"role="alert">';
+            echo '<div class="row- alert sticky-top '.$valor->context.' alert-dismissible fade show"role="alert">';
             echo $valor->content;
             echo '<button type="button" class="close m-auto" data-dismiss="alert" aria-label="Close">';
             echo '<span aria-hidden="true">&times;</span>';

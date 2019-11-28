@@ -20,12 +20,7 @@ class EditarUsuarioFormController implements IController
 
         $us = Usuario::find($_GET["id"]);
 
-        $enderecoBusca = new Endereco();
-        if($us->id_endereco != null){
-            $enderecoBusca = Endereco::findByCondition($us->id_endereco);
-        }else{
-            $enderecoBusca = new Endereco();
-        }
+
 
         echo Render::html(
             [
@@ -38,7 +33,7 @@ class EditarUsuarioFormController implements IController
             [
                 "usuario" => Usuario::download(),
                 "usuarioAtt" => $us,
-                "enderecoAtt" => $enderecoBusca,
+                "enderecoAtt" => Endereco::findByCondition($us->id_endereco),
                 "itens" => $_SESSION["itensMenu"],
                 "name_btn" => "Atualizar"
             ]);

@@ -5,8 +5,8 @@ use Ifnc\Tads\Helper\Util;
 ?>
 <div class="container-fluid">
      <div class="d-sm-flex justify-content-between align-items-center mb-4 margin_topo">
-         <h3 class="my_FontColor"><?= $nomePag ?></h3>
-         <a class="btn btn-lg fas fa-user-plus bg_color_btn my_FontColor" role="button" href="<?= $urlCadastrar ?>"> Cadastrar </a>
+         <h3 class="my_FontColor col-auto"><?= $nomePag ?></h3>
+         <a class="col-sm col-lg-auto btn btn-lg fas fa-user-plus bg_color_btn my_FontColor" role="button" href="<?= $urlCadastrar ?>"> Cadastrar </a>
  </div>
 
      <div class="row">

@@ -14,15 +14,11 @@ class Turma extends Record
     public $data_inicio_matricula;
     public $data_final_matricula;
 
-    public $disciplinas;
-    public $alunos;
+
 
 
     use Session;
 
-    public function store(){
-        parent::store();
-    }
 
     public function __sleep(){
 
@@ -30,22 +26,4 @@ class Turma extends Record
 
     }
 
-    public function addDisciplina($disciplina)
-    {
-        $this->disciplinas[] = $disciplina;
-    }
-
-    public function getDisciplinas()
-    {
-        return $this->disciplinas;
-    }
-
-    public function addAluno($aluno)
-    {
-        $this->alunos[] = $aluno;
-    }
-    public function getAlunos()
-    {
-        return $this->alunos;
-    }
 }

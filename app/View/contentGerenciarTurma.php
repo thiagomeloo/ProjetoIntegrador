@@ -5,10 +5,10 @@ use Ifnc\Tads\Helper\Util;
 ?>
 <div class="container-fluid">
     <div class="d-sm-flex justify-content-between align-items-center mb-4 margin_topo">
-        <h3 class="my_FontColor">Gerenciar Turma</h3>
-        <div class="">
-            <a class="btn btn-lg fas fa-user-plus bg_color_btn my_FontColor" role="button" href="/cadastrarTurma"> Cadastrar Turma</a>
-            <a class="btn btn-lg fas fa-user-plus bg_color_btn my_FontColor" role="button" href="/cadastrarTurma"> Cadastrar Disciplina</a>
+        <h3 class="my_FontColor col-auto">Gerenciar Turma</h3>
+        <div class="row">
+            <a class="col-auto m-1 btn btn-lg fas fa-user-plus bg_color_btn my_FontColor" role="button" href="/cadastrarTurma"> Cadastrar Turma</a>
+            <a class="col-auto m-1 btn btn-lg fas fa-user-plus bg_color_btn my_FontColor" role="button" href="/cadastrarTurma"> Cadastrar Disciplina</a>
         </div>
 
     </div>
@@ -81,6 +81,7 @@ use Ifnc\Tads\Helper\Util;
             <thead>
             <tr>
                 <th scope="col">id</th>
+                <th scope="col">Nome</th>
                 <th scope="col">Qtd_max_alunos</th>
                 <th scope="col">turno</th>
                 <th scope="col">Data inicio matricula</th>

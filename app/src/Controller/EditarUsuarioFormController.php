@@ -9,6 +9,7 @@ use Ifnc\Tads\Entity\Endereco;
 use Ifnc\Tads\Entity\Usuario;
 use Ifnc\Tads\Helper\Render;
 use Ifnc\Tads\Helper\Transaction;
+use mysql_xdevapi\Exception;
 
 class EditarUsuarioFormController implements IController
 {
@@ -18,6 +19,13 @@ class EditarUsuarioFormController implements IController
         Transaction::open();
 
         $us = Usuario::find($_GET["id"]);
+
+        $enderecoBusca = new Endereco();
+        if($us->id_endereco != null){
+            $enderecoBusca = Endereco::findByCondition($us->id_endereco);
+        }else{
+            $enderecoBusca = new Endereco();
+        }
 
         echo Render::html(
             [
@@ -30,10 +38,11 @@ class EditarUsuarioFormController implements IController
             [
                 "usuario" => Usuario::download(),
                 "usuarioAtt" => $us,
-                "enderecoAtt" => Endereco::findByCondition($us->id_endereco),
+                "enderecoAtt" => $enderecoBusca,
                 "itens" => $_SESSION["itensMenu"],
                 "name_btn" => "Atualizar"
             ]);
+
 
         Transaction::close();
     }

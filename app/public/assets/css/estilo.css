@@ -72,3 +72,8 @@ body::-webkit-scrollbar-thumb:horizontal {
   height: 2px;
   background: #454545;
 }
+
+.maxTam {
+  max-width: 7em;
+  max-height: 7em;
+}

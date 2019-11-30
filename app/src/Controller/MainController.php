@@ -2,8 +2,11 @@
 
 namespace Ifnc\Tads\Controller;
 
+use Ifnc\Tads\Entity\Endereco;
 use Ifnc\Tads\Entity\Usuario;
 use Ifnc\Tads\Helper\Render;
+use Ifnc\Tads\Helper\Transaction;
+use PHPMailer\PHPMailer\Exception;
 
 class MainController implements IController
 {
@@ -11,6 +14,7 @@ class MainController implements IController
     public function request(): void
     {
 
+        Transaction::open();
 
         $itens = array();
         $usuario = Usuario::download();
@@ -35,6 +39,7 @@ class MainController implements IController
 
         $_SESSION["itensMenu"] = $itens;
 
+
         echo Render::html(
             [
                 "cabecalho.php",
@@ -43,9 +48,11 @@ class MainController implements IController
             ],
             [
                 "usuario"=>$usuario,
+                "enderecoUsuario" => $enderecoTemp = Endereco::findByCondition($usuario->id_endereco) ,
                 "itens" => $_SESSION["itensMenu"]
 
             ]);
 
+        Transaction::close();
     }
 }

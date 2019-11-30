@@ -64,13 +64,13 @@ use Ifnc\Tads\Helper\Util;
                 <div class="form-check col-auto m-auto pt-1">
                     <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
                     <label class="form-check-label" for="gridRadios1">
-                        Buscar Por Email
+                        Buscar Por Id
                     </label>
                 </div>
                 <div class="form-check col-auto m-auto pt-1">
                     <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
                     <label class="form-check-label" for="gridRadios2">
-                        Buscar Por CPF
+                        Buscar Por Nome
                     </label>
                 </div>
             </div>

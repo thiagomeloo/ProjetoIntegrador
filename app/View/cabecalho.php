@@ -22,7 +22,7 @@
             <hr class="sidebar-divider">
             <ul class="nav navbar-nav text-light">
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link active" href=""><i class=""></i>
+                    <a class="nav-link active" href="/main"><i class=""></i>
                         <img class="border rounded-circle img-profile mx-auto" src="assets/img/user-icon.jpg" />
                         <span class="p-1 my_FontColor">
                             <?php

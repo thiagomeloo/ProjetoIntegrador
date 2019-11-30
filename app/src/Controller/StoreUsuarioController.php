@@ -57,18 +57,12 @@ class StoreUsuarioController implements IController
         $usuario->titulo_uf = $_POST['titulo_uf'];
 
         $usuario->tipo_user = $_POST['tipo_user'] ;
-        $usuario->status_user = 0;
+
         if(isset($_POST['id_endereco']) && $_POST['id_endereco'] != null){
             $usuario->id_endereco = $_POST['id_endereco'];
         }else{
             $usuario->id_endereco = $endereco->id;
         }
-
-
-
-
-        $senha =Util::random_key(8);
-        $usuario->senha = password_hash($senha, PASSWORD_ARGON2I);
 
 
 
@@ -80,6 +74,9 @@ class StoreUsuarioController implements IController
 
 
         }else if($usuario->id == null){
+            $usuario->status_user = 0;
+            $senha =Util::random_key(8);
+            $usuario->senha = password_hash($senha, PASSWORD_ARGON2I);
 
             $usuario->store();
             $this->create( new Message("Usuario cadastrado com Sucesso!","alert-success"));

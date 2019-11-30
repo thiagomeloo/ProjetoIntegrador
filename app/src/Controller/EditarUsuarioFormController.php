@@ -23,47 +23,22 @@ class EditarUsuarioFormController implements IController
         $type = isset($_GET["type"]) ? $_GET["type"] : 0;
 
 
-        switch ($type){
-            case 0:
-                echo Render::html(
-                    [
+        echo Render::html(
+            [
 
-                        "cabecalho.php",
-                        "form-store-usuario.php",
-                        "rodape.php"
+                "cabecalho.php",
+                "form-store-usuario.php",
+                "rodape.php"
 
-                    ],
-                    [
-                        "usuario" => Usuario::download(),
-                        "usuarioAtt" => $us,
-                        "enderecoAtt" => Endereco::findByCondition($us->id_endereco),
-                        "itens" => $_SESSION["itensMenu"],
-                        "name_btn" => "Atualizar"
-                    ]);
-                break;
-
-            case 1:
-
-                echo Render::html(
-                    [
-
-                        "cabecalho.php",
-                        "form-store-this-usuario.php",
-                        "rodape.php"
-
-                    ],
-                    [
-                        "usuario" => Usuario::download(),
-                        "usuarioAtt" => $us,
-                        "enderecoAtt" => Endereco::findByCondition($us->id_endereco),
-                        "itens" => $_SESSION["itensMenu"],
-                        "name_btn" => "Atualizar"
-                    ]);
-                break;
-            default:
-        }
-
-
+            ],
+            [
+                "usuario" => Usuario::download(),
+                "usuarioAtt" => $us,
+                "enderecoAtt" => Endereco::findByCondition($us->id_endereco),
+                "type" => $type,
+                "itens" => $_SESSION["itensMenu"],
+                "name_btn" => "Atualizar"
+            ]);
 
 
         Transaction::close();

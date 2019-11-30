@@ -9,11 +9,11 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label>Nome</label>
-                <input type="text" class="form-control" placeholder="Nome Completo" name="nome" required="" value="<?=isset($usuarioAtt) ? $usuarioAtt->nome : ''?>">
+                <input type="text" class="form-control" placeholder="Nome Completo" name="nome" required="" value="<?=isset($usuarioAtt) ? $usuarioAtt->nome : ''?>" <?= isset($type) && $type == 1? 'disabled': ''?>>
             </div>
             <div class="form-group col-md-6">
                 <label>CPF</label>
-                <input type="text" class="form-control" placeholder="CPF" name="cpf" required="" value="<?=isset($usuarioAtt) ? $usuarioAtt->cpf : ''?>">
+                <input type="text" class="form-control" placeholder="CPF" name="cpf" required="" value="<?=isset($usuarioAtt) ? $usuarioAtt->cpf : ''?>" <?= isset($type) && $type == 1? 'disabled': ''?> >
             </div>
         </div>
         <div class="form-row">
@@ -24,32 +24,32 @@
             <div class="form-group col-md-6">
                 <label>Data de Nascimento</label>
 
-                <input type="date" class="form-control" name="data_nascimento" required="" value="<?=isset($usuarioAtt) ? $usuarioAtt->data_nascimento : ''?>">
+                <input type="date" class="form-control" name="data_nascimento" required="" value="<?=isset($usuarioAtt) ? $usuarioAtt->data_nascimento : ''?>" <?= isset($type) && $type == 1? 'disabled': ''?>>
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>Numero da Identidade</label>
-                <input type="number" class="form-control" placeholder="Numero da Identidade" name="identidade_numero" value="<?=isset($usuarioAtt) ? $usuarioAtt->identidade_numero : ''?>">
+                <input type="number" class="form-control" placeholder="Numero da Identidade" name="identidade_numero" value="<?=isset($usuarioAtt) ? $usuarioAtt->identidade_numero : ''?>" <?= isset($type) && $type == 1? 'disabled': ''?>>
             </div>
             <div class="form-group col-md-3">
                 <label>Orgão Expeditor</label>
-                <input type="text" class="form-control" placeholder="Orgão Expeditor" name="identidade_orgao_expeditor" value="<?=isset($usuarioAtt) ? $usuarioAtt->identidade_orgao_expeditor : ''?>">
+                <input type="text" class="form-control" placeholder="Orgão Expeditor" name="identidade_orgao_expeditor" value="<?=isset($usuarioAtt) ? $usuarioAtt->identidade_orgao_expeditor : ''?>" <?= isset($type) && $type == 1? 'disabled': ''?>>
             </div>
             <div class="form-group col-md-3">
                 <label>UF</label>
-                <input type="text" class="form-control" placeholder="UF" name="identidade_uf" value="<?=isset($usuarioAtt) ? $usuarioAtt->identidade_uf : ''?>">
+                <input type="text" class="form-control" placeholder="UF" name="identidade_uf" value="<?=isset($usuarioAtt) ? $usuarioAtt->identidade_uf : ''?>" <?= isset($type) && $type == 1? 'disabled': ''?>>
             </div>
             <div class="form-group col-md-3">
                 <label>Data da Expedição</label>
-                <input type="date" class="form-control" placeholder="Data da Expedição" name="identidade_data_expedicao" value="<?=isset($usuarioAtt) ? $usuarioAtt->identidade_data_expedicao : ''?>">
+                <input type="date" class="form-control" placeholder="Data da Expedição" name="identidade_data_expedicao" value="<?=isset($usuarioAtt) ? $usuarioAtt->identidade_data_expedicao : ''?>" <?= isset($type) && $type == 1? 'disabled': ''?>>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label>Tipo da Certidão</label>
-                <select class="form-control" name="certidao_tipo">
+                <select class="form-control" name="certidao_tipo" <?= isset($type) && $type == 1? 'disabled': ''?>>
 
                     <option value="certidao_nascimento" <?=isset($usuarioAtt) && $usuarioAtt->certidao_tipo == 'certidao_nascimento'? 'selected="true"' : ''?> >Certidão de Nascimento</option>
                     <option value="certidao_casamento"  <?=isset($usuarioAtt) && $usuarioAtt->certidao_tipo == 'certidao_casamento'? 'selected="true"' : ''?>>Certidão de Casamento</option>
@@ -57,43 +57,43 @@
             </div>
             <div class="form-group col-md-4">
                 <label>Cartório</label>
-                <input type="text" class="form-control" placeholder="Cartório" name="certidao_cartorio" value="<?=isset($usuarioAtt) ? $usuarioAtt->certidao_cartorio : ''?>">
+                <input type="text" class="form-control" placeholder="Cartório" name="certidao_cartorio" value="<?=isset($usuarioAtt) ? $usuarioAtt->certidao_cartorio : ''?>" <?= isset($type) && $type == 1? 'disabled': ''?>>
             </div>
             <div class="form-group col-md-4">
                 <label>Numero de Termo</label>
-                <input type="text" class="form-control" placeholder="Numero de Termo" name="certidao_numero_de_termo" value="<?=isset($usuarioAtt) ? $usuarioAtt->certidao_numero_de_termo : ''?>">
+                <input type="text" class="form-control" placeholder="Numero de Termo" name="certidao_numero_de_termo" value="<?=isset($usuarioAtt) ? $usuarioAtt->certidao_numero_de_termo : ''?>" <?= isset($type) && $type == 1? 'disabled': ''?>>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label>Folha</label>
-                <input type="text" class="form-control" placeholder="Folha" name="certidao_folha" value="<?=isset($usuarioAtt) ? $usuarioAtt->certidao_folha : ''?>">
+                <input type="text" class="form-control" placeholder="Folha" name="certidao_folha" value="<?=isset($usuarioAtt) ? $usuarioAtt->certidao_folha : ''?>" <?= isset($type) && $type == 1? 'disabled': ''?>>
             </div>
             <div class="form-group col-md-4">
                 <label>Livro</label>
-                <input type="text" class="form-control" placeholder="Livro" name="certidao_livro" value="<?=isset($usuarioAtt) ? $usuarioAtt->certidao_livro : ''?>">
+                <input type="text" class="form-control" placeholder="Livro" name="certidao_livro" value="<?=isset($usuarioAtt) ? $usuarioAtt->certidao_livro : ''?>" <?= isset($type) && $type == 1? 'disabled': ''?>>
             </div>
             <div class="form-group col-md-4">
                 <label>Data de Emissão da Certidão</label>
-                <input type="date" class="form-control" placeholder="Data de Emissão da Certidão" name="certidao_data_emissao" value="<?=isset($usuarioAtt) ? $usuarioAtt->certidao_data_emissao : ''?>">
+                <input type="date" class="form-control" placeholder="Data de Emissão da Certidão" name="certidao_data_emissao" value="<?=isset($usuarioAtt) ? $usuarioAtt->certidao_data_emissao : ''?>" <?= isset($type) && $type == 1? 'disabled': ''?>>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>Número do Título Eleitor</label>
-                <input type="number" class="form-control" placeholder="Número do Título Eleitor" name="titulo_numero" value="<?=isset($usuarioAtt) ? $usuarioAtt->titulo_numero : ''?>">
+                <input type="number" class="form-control" placeholder="Número do Título Eleitor" name="titulo_numero" value="<?=isset($usuarioAtt) ? $usuarioAtt->titulo_numero : ''?>" <?= isset($type) && $type == 1? 'disabled': ''?>>
             </div>
             <div class="form-group col-md-3">
                 <label>Zona</label>
-                <input type="text" class="form-control" placeholder="Zona" name="titulo_zona" value="<?=isset($usuarioAtt) ? $usuarioAtt->titulo_zona : ''?>">
+                <input type="text" class="form-control" placeholder="Zona" name="titulo_zona" value="<?=isset($usuarioAtt) ? $usuarioAtt->titulo_zona : ''?>" <?= isset($type) && $type == 1? 'disabled': ''?>>
             </div>
             <div class="form-group col-md-3">
                 <label>Seção</label>
-                <input type="text" class="form-control" placeholder="Seção" name="titulo_secao" value="<?=isset($usuarioAtt) ? $usuarioAtt->titulo_secao : ''?>">
+                <input type="text" class="form-control" placeholder="Seção" name="titulo_secao" value="<?=isset($usuarioAtt) ? $usuarioAtt->titulo_secao : ''?>" <?= isset($type) && $type == 1? 'disabled': ''?>>
             </div>
             <div class="form-group col-md-3">
                 <label>UF</label>
-                <input type="text" class="form-control" placeholder="UF" name="titulo_uf" value="<?=isset($usuarioAtt) ? $usuarioAtt->titulo_uf : ''?>">
+                <input type="text" class="form-control" placeholder="UF" name="titulo_uf" value="<?=isset($usuarioAtt) ? $usuarioAtt->titulo_uf : ''?>" <?= isset($type) && $type == 1? 'disabled': ''?>>
             </div>
             <input type="number" class="d-none" name="tipo_user" value="<?=isset($usuarioAtt) ? $usuarioAtt->tipo_user : $tpUser?>">
             <input type="number" class="d-none" name="id" value="<?=isset($usuarioAtt) ? $usuarioAtt->id : ''?>" >

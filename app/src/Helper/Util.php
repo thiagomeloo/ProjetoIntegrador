@@ -16,7 +16,7 @@ class Util
         return date("d/m/Y", strtotime($data));
     }
 
-    public static function redirect($id){
+    public static function redirect($id, $value = false){
         switch ($id){
             case 1:
                 header('Location: /gerenciarAdmin', true, 302);
@@ -26,6 +26,12 @@ class Util
                 break;
             case 3:
                 header('Location: /gerenciarAluno', true, 302);
+                break;
+            case 4:
+                header('Location: /gerenciarTurma', true, 302);
+                break;
+            case 5:
+                header('Location: /turmaManager?id='.$value, true, 302);
                 break;
             default:
                 header('Location: /main', true, 302);

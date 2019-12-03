@@ -1,35 +1,42 @@
 <?php
 
+
 namespace Ifnc\Tads\Controller;
 
 
+
+use Ifnc\Tads\Entity\Endereco;
 use Ifnc\Tads\Entity\Turma;
 use Ifnc\Tads\Entity\Usuario;
 use Ifnc\Tads\Helper\Render;
 use Ifnc\Tads\Helper\Transaction;
+use mysql_xdevapi\Exception;
 
-class CadastrarDisciplinaController implements IController
-
+class EditarTurmaFormController implements IController
 {
 
     public function request(): void
     {
         Transaction::open();
+
+        $turma = Turma::find($_GET["id"]);
+
+
         echo Render::html(
             [
 
                 "cabecalho.php",
-                "form-store-disciplina.php",
+                "form-store-turma.php",
                 "rodape.php"
 
             ],
             [
                 "usuario" => Usuario::download(),
-                "turma" => Turma::download(),
-                "professores" => Usuario::all("tipo_user = 2"),
-                "name_btn" => "Cadastrar",
-                "itens" => $_SESSION["itensMenu"]
+                "turmaAtt" => $turma,
+                "itens" => $_SESSION["itensMenu"],
+                "name_btn" => "Atualizar"
             ]);
+
 
         Transaction::close();
     }

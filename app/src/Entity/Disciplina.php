@@ -13,6 +13,7 @@ class Disciplina extends Record
     public $qtd_aulas;
     public $status;
     public $id_professor;
+    public $id_turma;
 
     use Session;
 

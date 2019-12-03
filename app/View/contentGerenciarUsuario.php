@@ -7,7 +7,7 @@ use Ifnc\Tads\Helper\Util;
      <div class="d-sm-flex justify-content-between align-items-center mb-4 margin_topo">
          <h3 class="my_FontColor col-auto"><?= $nomePag ?></h3>
          <a class="col-sm col-lg-auto btn btn-lg fas fa-user-plus bg_color_btn my_FontColor" role="button" href="<?= $urlCadastrar ?>"> Cadastrar </a>
- </div>
+     </div>
 
      <div class="row">
          <div class="col-md-6 col-xl-4 mb-4">
@@ -127,7 +127,7 @@ use Ifnc\Tads\Helper\Util;
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cancelar</button>
-                <a class="btn btn-outline-danger" id="btnConfirmDel">Confirmar</a>
+                <a class="btn btn-outline-danger" id="btnConfirmDel" >Confirmar</a>
             </div>
         </div>
     </div>

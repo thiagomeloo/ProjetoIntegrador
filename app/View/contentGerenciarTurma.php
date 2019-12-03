@@ -6,11 +6,7 @@ use Ifnc\Tads\Helper\Util;
 <div class="container-fluid">
     <div class="d-sm-flex justify-content-between align-items-center mb-4 margin_topo">
         <h3 class="my_FontColor col-auto">Gerenciar Turma</h3>
-        <div class="row">
-            <a class="col-auto m-1 btn btn-lg fas fa-user-plus bg_color_btn my_FontColor" role="button" href="/cadastrarTurma"> Cadastrar Turma</a>
-            <a class="col-auto m-1 btn btn-lg fas fa-user-plus bg_color_btn my_FontColor" role="button" href="/cadastrarTurma"> Cadastrar Disciplina</a>
-        </div>
-
+        <a class="col-sm col-lg-auto btn btn-lg fas fas fa-plus-circle bg_color_btn my_FontColor" role="button" href="/cadastrarTurma"> Cadastrar Turma </a>
     </div>
 
     <div class="row">
@@ -86,6 +82,7 @@ use Ifnc\Tads\Helper\Util;
                 <th scope="col">turno</th>
                 <th scope="col">Data inicio matricula</th>
                 <th scope="col">Data final matricula</th>
+                <th scope="col">Ação</th>
             </tr>
             </thead>
             <tbody>
@@ -95,16 +92,18 @@ use Ifnc\Tads\Helper\Util;
             foreach($turmas as $turma){ ?>
                 <tr>
                     <th scope="row"><?=$turma->id?></th>
+                    <td><?=$turma->nome != null ? $turma->nome : ''?></td>
                     <td><?=$turma->qtd_max_alunos != null ? $turma->qtd_max_alunos : ''?></td>
                     <td><?=$turma->qtd_max_alunos != null ? $turma->qtd_max_alunos : ''?></td>
                     <td><?=$turma->data_inicio_matricula != null ? Util::data($turma->data_inicio_matricula) : ''?></td>
-                    <td><?=$turma->data_final_matricula != null ? $turma->data_final_matricula : ''?></td>
+                    <td><?=$turma->data_final_matricula != null ? Util::data($turma->data_final_matricula) : ''?></td>
                     <td>
-                        <a class="btn btn-circle bg_color_btn" href="\editarTurma?id=<?=$turma->id?>">
-                            <i class="btn fas fa-user-edit fa-1x my_FontColor"></i>
+                        <a class="btn btn-circle bg_color_btn" href="\editarTurma?id='<?=$turma->id?>'" >
+                            <i class="btn fas fa-edit fa-1x my_FontColor"></i>
                         </a>
-                        <a class="btn btn-circle bg_color_btn" id="btnDelete" href="/deletarTurma?id='<?=$turma->id?>'" onclick='confirmDelete("/deletarUsuario?id=<?=$admin->id?>")' data-toggle="modal" data-target="#ExemploModalCentralizado">
-                            <i class="btn fas fa-user-times fa-1x my_FontColor"></i>
+
+                        <a class="btn btn-circle bg_color_btn" href="\turmaManager?id=<?=$turma->id?>">
+                            <i class="btn fas fa-external-link-alt fa-1x my_FontColor"></i>
                         </a>
                     </td>
                 </tr>
@@ -115,25 +114,3 @@ use Ifnc\Tads\Helper\Util;
 </div>
 
 
-
-<!-- Modal -->
-<div class="modal fade " id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content card">
-            <div class="modal-header">
-                <h5 class="modal-title text-danger" id="TituloModalCentralizado">AVISO !</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body text-danger">
-                Tem certeza que deseja excluir ?<br>
-                Após a exclusão, n será possível reverter a ação.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cancelar</button>
-                <a class="btn btn-outline-danger" id="btnConfirmDel">Confirmar</a>
-            </div>
-        </div>
-    </div>
-</div>

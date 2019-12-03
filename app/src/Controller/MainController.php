@@ -48,7 +48,7 @@ class MainController implements IController
             ],
             [
                 "usuario"=>$usuario,
-                "enderecoUsuario" => $enderecoTemp = Endereco::findByCondition($usuario->id_endereco) ,
+                "enderecoUsuario" => $enderecoTemp = Endereco::find($usuario->id_endereco) ,
                 "itens" => $_SESSION["itensMenu"]
 
             ]);

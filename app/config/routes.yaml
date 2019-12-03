@@ -24,7 +24,12 @@
 
 /gerenciarTurma: GerenciarTurmaController
 /cadastrarTurma: CadastrarTurmaController
+/editarTurma: EditarTurmaFormController
+/turmaManager: TurmaManagerController
+/storeTurma: StoreTurmaController
 
+/cadastrarDisciplina : CadastrarDisciplinaController
+/storeDisciplina: StoreDisciplinaController
 
 
 

@@ -23,6 +23,7 @@ class CadastrarTurmaController implements IController
             ],
             [
                 "usuario" => Usuario::download(),
+
                 "name_btn" => "Cadastrar",
                 "itens" => $_SESSION["itensMenu"]
             ]);

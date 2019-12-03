@@ -27,7 +27,7 @@ class GerenciarProfessorController implements IController
                 "urlCadastrar" => "/cadastrarProfessor",
                 "entidade" => "Professores",
                 "usuariosArray"=> Usuario::all("tipo_user = 2"),
-                "qtdAtivo" => Usuario::count("tipo_user = 2 and status_user = 2"),
+                "qtdAtivo" => Usuario::count("tipo_user = 2 and status_user = 1"),
                 "qtdInativo" => Usuario::count("tipo_user = 2 and status_user != 1"),
                 "qtdTotal" => Usuario::count("tipo_user = 2"),
                 "itens" => $_SESSION["itensMenu"]

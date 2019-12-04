@@ -42,7 +42,7 @@ use Ifnc\Tads\Helper\Util;
                         <a class="btn btn-circle bg_color_btn float-left m-1" href="\editarDisciplina?id=<?=$disciplina->id ?>">
                             <i class="btn fas fa-edit fa-1x my_FontColor"></i>
                         </a>
-                        <a class="btn btn-circle bg_color_btn float-left m-1" href="#" data-toggle="modal" data-target="#exampleModalLong">
+                        <a class="btn btn-circle bg_color_btn float-left m-1" href="#" data-toggle="modal" data-target="#ModalHistorico" onclick="getHistorico(<?=$disciplina->id ?>)">
                             <i class="btn fas fa-history fa-1x my_FontColor"></i>
                         </a>
                         <a class="btn btn-circle bg_color_btn float-left m-1" href="\deletarDisciplina">
@@ -62,7 +62,7 @@ use Ifnc\Tads\Helper\Util;
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade" id="ModalHistorico" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -74,7 +74,7 @@ use Ifnc\Tads\Helper\Util;
             <div class="modal-body">
 
 
-                <ul class="timeline container-fluid">
+                <ul class="timeline container-fluid" id="ulModal">
                     <li>
                         <a href="#" class="float-right">21 March, 2014</a>
                         <p class="container-fluid row"> Nome:</p>

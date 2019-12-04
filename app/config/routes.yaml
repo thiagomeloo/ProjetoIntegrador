@@ -12,8 +12,6 @@
 /formValidaUser: FormValidaUserController
 /validaUser: ValidaUserController
 
-
-
 /gerenciarAdmin: GerenciarAdminController
 /cadastrarAdmin: CadastrarAdminController
 
@@ -31,6 +29,6 @@
 /cadastrarDisciplina : CadastrarDisciplinaController
 /storeDisciplina: StoreDisciplinaController
 /editarDisciplina: EditarDisciplinaFormController
-
+/historicoDisciplina: HistoricoDisciplinaController
 
 

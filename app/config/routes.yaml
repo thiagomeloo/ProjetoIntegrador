@@ -30,6 +30,7 @@
 
 /cadastrarDisciplina : CadastrarDisciplinaController
 /storeDisciplina: StoreDisciplinaController
+/editarDisciplina: EditarDisciplinaFormController
 
 
 

@@ -36,6 +36,7 @@ class TurmaManagerController implements IController
             ],
             [
                 "usuario" => Usuario::download(),
+                "turma" => $turma,
                 "disciplinas" => $disciplinas,
                 "itens" => $_SESSION["itensMenu"]
             ]);

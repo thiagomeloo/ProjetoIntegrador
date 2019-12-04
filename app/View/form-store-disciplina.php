@@ -20,14 +20,16 @@
                 <select class="form-control" name="id_professor">
                     <?php
 
-                    foreach($professores as $professor){ ?>
-                        <option value="<?=$professor->id?>"><?=$professor->nome?></option>
+                    foreach($professores as $professor){?>
+
+                        <option value="<?=$professor->id?>" <?=isset($disciplinaAtt->id_professor->id)  && $disciplinaAtt->id_professor->id == $professor->id ? 'selected="true"' : ''?> > <?=$professor->nome?> </option>
 
                     <?php } ?>
                 </select>
             </div>
         </div>
-        <input type="number" class="d-none" name="id_turma" value="<?=$turma->id?>" >
+        <input type="number" class="d-none" name="id" value="<?=isset($disciplinaAtt->id) ? $disciplinaAtt->id : '' ?>" >
+        <input type="number" class="d-none" name="id_turma" value="<?=isset($disciplinaAtt->id_turma) ? $disciplinaAtt->id_turma : $turma->id?>" >
 
         <button type="submit" class="btn bg_color_secundary btn-lg fas fa-user-plus float-right my_FontColor">
             <?=$name_btn;?>

@@ -1,13 +1,18 @@
+<?php
+
+use Ifnc\Tads\Helper\Util;
+
+?>
 <hr>
 <div class="col-auto mt-3">
-    <h4 class="row col-auto">Nome da turma</h4>
+    <h4 class="row col-auto"> <?=$turma->nome ?> </h4>
     <a class="col-sm col-lg-auto btn btn-lg fas fas fa-plus-circle bg_color_btn my_FontColor float-right" role="button" href="/cadastrarDisciplina"> Cadastrar Disciplina </a>
     <div class="row">
-        <label class="col-auto">Id: </label>
-        <label class="col-auto"> Quantidade maxima de alunos:   </label>
-        <label class="col-auto">Turno: </label>
-        <label class="col-auto"> Data de Inicio das matriculas:   </label>
-        <label class="col-auto"> Data de Fim das matriculas:   </label>
+        <label class="col-auto">Id: <?=$turma->id ?> </label>
+        <label class="col-auto"> Quantidade maxima de alunos: <?=$turma->qtd_max_alunos ?> </label>
+        <label class="col-auto">Turno: <?=$turma->turno ?> </label>
+        <label class="col-auto"> Data de inicio das matriculas: <?= Util::data($turma->data_inicio_matricula); ?> </label>
+        <label class="col-auto"> Data de fim das matriculas: <?= Util::data($turma->data_final_matricula);  ?> </label>
     </div>
 
 </div>
@@ -32,9 +37,9 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title"><?=$disciplina->nome ?></h5>
-                        <p class="card-text"><?=$disciplina->id_professor->nome ?></p>
+                        <p class="card-text">Professor: <?=$disciplina->id_professor->nome ?></p>
                         <p class="card-text">Qtd Aulas: <?=$disciplina->qtd_aulas ?></p>
-                        <a class="btn btn-circle bg_color_btn float-left m-1" href="\editarDisciplina">
+                        <a class="btn btn-circle bg_color_btn float-left m-1" href="\editarDisciplina?id=<?=$disciplina->id ?>">
                             <i class="btn fas fa-edit fa-1x my_FontColor"></i>
                         </a>
                         <a class="btn btn-circle bg_color_btn float-left m-1" href="#" data-toggle="modal" data-target="#exampleModalLong">
@@ -61,58 +66,23 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Histórico de alterações</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+
+
                 <ul class="timeline container-fluid">
                     <li>
-                        <a target="_blank" href="https://www.totoprayogo.com/#">New Web Design</a>
                         <a href="#" class="float-right">21 March, 2014</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
+                        <p class="container-fluid row"> Nome:</p>
+                        <p class="container-fluid row"> Quantidade de Aulas:</p>
+                        <p class="container-fluid row"> Professor:</p>
+
                     </li>
-                    <li>
-                        <a href="#">21 000 Job Seekers</a>
-                        <a href="#" class="float-right">4 March, 2014</a>
-                        <p>Curabitur purus sem, malesuada eu luctus eget, suscipit sed turpis. Nam pellentesque felis vitae justo accumsan, sed semper nisi sollicitudin...</p>
-                    </li>
-                    <li>
-                        <a href="#">Awesome Employers</a>
-                        <a href="#" class="float-right">1 April, 2014</a>
-                        <p>Fusce ullamcorper ligula sit amet quam accumsan aliquet. Sed nulla odio, tincidunt vitae nunc vitae, mollis pharetra velit. Sed nec tempor nibh...</p>
-                    </li>
-                    <li>
-                        <a target="_blank" href="https://www.totoprayogo.com/#">New Web Design</a>
-                        <a href="#" class="float-right">21 March, 2014</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
-                    </li>
-                    <li>
-                        <a href="#">21 000 Job Seekers</a>
-                        <a href="#" class="float-right">4 March, 2014</a>
-                        <p>Curabitur purus sem, malesuada eu luctus eget, suscipit sed turpis. Nam pellentesque felis vitae justo accumsan, sed semper nisi sollicitudin...</p>
-                    </li>
-                    <li>
-                        <a href="#">Awesome Employers</a>
-                        <a href="#" class="float-right">1 April, 2014</a>
-                        <p>Fusce ullamcorper ligula sit amet quam accumsan aliquet. Sed nulla odio, tincidunt vitae nunc vitae, mollis pharetra velit. Sed nec tempor nibh...</p>
-                    </li>
-                    <li>
-                        <a target="_blank" href="https://www.totoprayogo.com/#">New Web Design</a>
-                        <a href="#" class="float-right">21 March, 2014</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
-                    </li>
-                    <li>
-                        <a href="#">21 000 Job Seekers</a>
-                        <a href="#" class="float-right">4 March, 2014</a>
-                        <p>Curabitur purus sem, malesuada eu luctus eget, suscipit sed turpis. Nam pellentesque felis vitae justo accumsan, sed semper nisi sollicitudin...</p>
-                    </li>
-                    <li>
-                        <a href="#">Awesome Employers</a>
-                        <a href="#" class="float-right">1 April, 2014</a>
-                        <p>Fusce ullamcorper ligula sit amet quam accumsan aliquet. Sed nulla odio, tincidunt vitae nunc vitae, mollis pharetra velit. Sed nec tempor nibh...</p>
-                    </li>
+
                 </ul>
 
             </div>

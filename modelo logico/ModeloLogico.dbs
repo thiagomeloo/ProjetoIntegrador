@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Relacionamento" id="Project_45038ca" template="Default" database="Sqlite" >
+	<schema name="Default" schemaname="Default" >
+		<table name="AlunoTurma" >
+			<column name="id" type="integer" jt="4" mandatory="y" />
+			<column name="id_aluno" type="integer" jt="4" />
+			<column name="id_turma" type="integer" jt="4" />
+			<index name="Pk_AlunoTurma_id" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_alunoturma_usuario" to_schema="Default" to_table="Usuario" >
+				<fk_column name="id_aluno" pk="id" />
+			</fk>
+			<fk name="fk_alunoturma_turma" to_schema="Default" to_table="Turma" >
+				<fk_column name="id_turma" pk="id" />
+			</fk>
+		</table>
+		<table name="Aluno_responsavel" >
+			<column name="id" type="integer" jt="4" mandatory="y" />
+			<column name="id_aluno" type="integer" jt="4" />
+			<column name="id_responsavel" type="integer" jt="4" />
+			<index name="Pk_Aluno_responsavel_id" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_aluno_responsavel_usuario" to_schema="Default" to_table="Usuario" >
+				<fk_column name="id_aluno" pk="id" />
+			</fk>
+			<fk name="fk_aluno_responsavel" to_schema="Default" to_table="Responsavel" >
+				<fk_column name="id_responsavel" pk="id" />
+			</fk>
+		</table>
+		<table name="Disciplina" >
+			<column name="id" type="integer" jt="4" mandatory="y" />
+			<column name="nome" type="varchar" length="50" jt="12" />
+			<column name="qtd_aulas" type="integer" jt="4" />
+			<column name="status" type="integer" length="1" jt="4" />
+			<column name="id_professor" type="integer" jt="4" />
+			<column name="id_turma" type="integer" jt="4" />
+			<index name="Pk_Disciplina_id" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_disciplina_usuario" to_schema="Default" to_table="Usuario" >
+				<fk_column name="id_professor" pk="id" />
+			</fk>
+			<fk name="fk_disciplina_turma" to_schema="Default" to_table="Turma" >
+				<fk_column name="id_turma" pk="id" />
+			</fk>
+		</table>
+		<table name="Disciplina_History" >
+			<column name="id" type="integer" jt="4" mandatory="y" />
+			<column name="id_disciplina_new" type="integer" jt="4" />
+			<column name="nome_new" type="varchar" length="50" jt="12" />
+			<column name="qtd_aulas_new" type="integer" jt="4" />
+			<column name="status_new" type="integer" length="1" jt="4" />
+			<column name="id_professor_new" type="integer" jt="4" />
+			<column name="id_disciplina_old" type="integer" jt="4" />
+			<column name="nome_old" type="varchar" length="50" jt="12" />
+			<column name="qtd_aulas_old" type="integer" jt="4" />
+			<column name="status_old" type="integer" length="1" jt="4" />
+			<column name="id_professor_old" type="integer" jt="4" />
+			<index name="Pk_Disciplina_History_id" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="Endereco" >
+			<column name="id" type="integer" jt="4" mandatory="y" />
+			<column name="rua" type="varchar" length="255" jt="12" />
+			<column name="numero" type="varchar" length="50" jt="12" />
+			<column name="bairro" type="integer" jt="4" />
+			<column name="cidade" type="varchar" length="255" jt="12" />
+			<column name="estado" type="varchar" length="255" jt="12" />
+			<column name="cep" type="varchar" length="255" jt="12" />
+			<index name="Pk_Endereco_id" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="Matricula" >
+			<column name="id" type="integer" jt="4" />
+			<column name="status" type="integer" length="1" jt="4" />
+			<column name="nota_final" type="integer" jt="4" />
+			<column name="faltas" type="integer" jt="4" />
+			<column name="data_matricula" type="integer" jt="4" />
+			<column name="id_aluno" type="integer" jt="4" />
+			<column name="id_turma" type="integer" jt="4" />
+			<column name="id_disciplina" type="integer" jt="4" />
+			<fk name="fk_aluno" to_schema="Default" to_table="Usuario" >
+				<fk_column name="id_aluno" pk="id" />
+			</fk>
+			<fk name="fk_turma" to_schema="Default" to_table="Turma" >
+				<fk_column name="id_turma" pk="id" />
+			</fk>
+			<fk name="fk_disciplina" to_schema="Default" to_table="Disciplina" >
+				<fk_column name="id_disciplina" pk="id" />
+			</fk>
+		</table>
+		<table name="Professor" >
+			<column name="id" type="integer" jt="4" mandatory="y" />
+			<column name="area_de_atuacao" type="varchar" length="255" jt="12" />
+			<column name="salario" type="double" jt="8" />
+			<index name="Pk_Professor_id" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_professor_usuario" to_schema="Default" to_table="Usuario" >
+				<fk_column name="id" pk="id" />
+			</fk>
+		</table>
+		<table name="Responsavel" >
+			<column name="id" type="integer" jt="4" mandatory="y" />
+			<column name="chave_de_acesso" type="integer" jt="4" />
+			<index name="Pk_Responsavel_id" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_responsavel_usuario" to_schema="Default" to_table="Usuario" >
+				<fk_column name="id" pk="id" />
+			</fk>
+		</table>
+		<table name="Telefone" >
+			<column name="id" type="integer" jt="4" mandatory="y" />
+			<column name="id_usuario" type="integer" jt="4" />
+			<column name="numero" type="integer" jt="4" />
+			<index name="Pk_Telefone_id" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_telefone_usuario" to_schema="Default" to_table="Usuario" >
+				<fk_column name="id_usuario" pk="id" />
+			</fk>
+		</table>
+		<table name="Turma" >
+			<column name="id" type="integer" jt="4" mandatory="y" />
+			<column name="nome" type="varchar" length="255" jt="12" />
+			<column name="qtd_max_alunos" type="integer" jt="4" />
+			<column name="turno" type="varchar" length="15" jt="12" />
+			<column name="data_inicio_matricula" type="boolean" jt="-7" />
+			<column name="data_final_matricula" type="boolean" jt="-7" />
+			<index name="Pk_Turma_id" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="Turma_Disciplina" >
+			<column name="id" type="integer" jt="4" mandatory="y" />
+			<column name="id_turma" type="integer" jt="4" />
+			<column name="id_disciplina" type="integer" jt="4" />
+			<index name="Pk_Turma_Disciplina_id" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="Usuario" >
+			<column name="id" type="integer" jt="4" mandatory="y" />
+			<column name="nome" type="varchar" length="255" jt="12" />
+			<column name="email" type="varchar" length="255" jt="12" mandatory="y" />
+			<column name="senha" type="varchar" length="14" jt="12" />
+			<column name="data_nascimento" type="date" jt="91" />
+			<column name="cpf" type="varchar" length="15" jt="12" />
+			<column name="titulo_numero" type="varchar" length="255" jt="12" />
+			<column name="titulo_zona" type="varchar" length="50" jt="12" />
+			<column name="titulo_secao" type="varchar" length="255" jt="12" />
+			<column name="titulo_uf" type="varchar" length="255" jt="12" />
+			<column name="identidade_orgao_expeditor" type="varchar" length="25" jt="12" />
+			<column name="identidade_numero" type="integer" jt="4" />
+			<column name="identidade_uf" type="integer" jt="4" />
+			<column name="identidade_data_expedicao" type="integer" jt="4" />
+			<column name="certidao_tipo" type="varchar" length="255" jt="12" />
+			<column name="certidao_cartorio" type="varchar" length="255" jt="12" />
+			<column name="certidao_numero_de_termo" type="varchar" length="255" jt="12" />
+			<column name="certidao_folha" type="varchar" length="255" jt="12" />
+			<column name="certidao_livro" type="integer" jt="4" />
+			<column name="certidao_data_emissao" type="integer" jt="4" />
+			<column name="tipo_usuario" type="integer" jt="4" />
+			<column name="status_usuario" type="char" length="1" jt="1" />
+			<column name="id_endereco" type="integer" jt="4" />
+			<index name="Pk_Usuario_id" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_usuario_endereco" to_schema="Default" to_table="Endereco" >
+				<fk_column name="id_endereco" pk="id" />
+			</fk>
+		</table>
+	</schema>
+	<layout name="Default Layout" id="Layout_27e911a" show_relation="columns" >
+		<entity schema="Default" name="Telefone" color="C1D8EE" x="48" y="208" />
+		<entity schema="Default" name="Responsavel" color="C1D8EE" x="96" y="464" />
+		<entity schema="Default" name="Endereco" color="C1D8EE" x="160" y="272" />
+		<entity schema="Default" name="Usuario" color="C1D8EE" x="352" y="176" />
+		<entity schema="Default" name="Disciplina" color="C1D8EE" x="656" y="496" />
+		<entity schema="Default" name="AlunoTurma" color="C1D8EE" x="608" y="224" />
+		<entity schema="Default" name="Turma" color="C1D8EE" x="816" y="320" />
+		<entity schema="Default" name="Matricula" color="C1D8EE" x="912" y="560" />
+		<entity schema="Default" name="Disciplina_History" color="C1D8EE" x="720" y="48" />
+		<entity schema="Default" name="Aluno_responsavel" color="C1D8EE" x="128" y="640" />
+	</layout>
+</project>

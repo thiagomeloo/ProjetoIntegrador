@@ -8,6 +8,7 @@
 /storeUsuario: StoreUsuarioController
 /editarUsuario: EditarUsuarioFormController
 /deletarUsuario: DeletarUsuarioController
+/inativarUsuario: InativarUsuarioController
 
 /formValidaUser: FormValidaUserController
 /validaUser: ValidaUserController

@@ -16,6 +16,10 @@ class Util
         return date("d/m/Y", strtotime($data));
     }
 
+    public static function dataHora($data){
+        return date("d/m/Y H:i:s", strtotime($data));
+    }
+
     public static function redirect($id, $value = false){
         switch ($id){
             case 1:

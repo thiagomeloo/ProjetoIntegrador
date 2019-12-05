@@ -39,6 +39,8 @@ class StoreDisciplinaController implements IController
 
             if($disciplina-> nome == $disciplinaOld-> nome && $disciplina->qtd_aulas == $disciplinaOld->qtd_aulas
                 && $disciplina->id_professor == $disciplinaOld->id_professor){
+
+                $this->create( new Message("Ops, não foi feita nenhuma alteração!","alert-warning"));
                 Util::redirect(5, $disciplina->id_turma);
                 exit();
             }

@@ -45,9 +45,6 @@ use Ifnc\Tads\Helper\Util;
                         <a class="btn btn-circle bg_color_btn float-left m-1" href="#" data-toggle="modal" data-target="#ModalHistorico" onclick="getHistorico(<?=$disciplina->id ?>)">
                             <i class="btn fas fa-history fa-1x my_FontColor"></i>
                         </a>
-                        <a class="btn btn-circle bg_color_btn float-left m-1" href="\deletarDisciplina">
-                            <i class="btn fas fa-times fa-1x my_FontColor"></i>
-                        </a>
                     </div>
                 </div>
             </div>

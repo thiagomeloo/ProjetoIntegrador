@@ -72,13 +72,7 @@ use Ifnc\Tads\Helper\Util;
 
 
                 <ul class="timeline container-fluid" id="ulModal">
-                    <li>
-                        <a href="#" class="float-right">21 March, 2014</a>
-                        <p class="container-fluid row"> Nome:</p>
-                        <p class="container-fluid row"> Quantidade de Aulas:</p>
-                        <p class="container-fluid row"> Professor:</p>
 
-                    </li>
 
                 </ul>
 

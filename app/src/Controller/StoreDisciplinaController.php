@@ -3,12 +3,10 @@ namespace Ifnc\Tads\Controller;
 
 use Ifnc\Tads\Entity\Disciplina;
 use Ifnc\Tads\Entity\DisciplinaHistory;
-use Ifnc\Tads\Entity\Turma;
 use Ifnc\Tads\Helper\Flash;
 use Ifnc\Tads\Helper\Message;
 use Ifnc\Tads\Helper\Transaction;
 use Ifnc\Tads\Helper\Util;
-use mysql_xdevapi\Exception;
 
 
 class StoreDisciplinaController implements IController

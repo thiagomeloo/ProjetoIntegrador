@@ -1,7 +1,9 @@
 <?php
 namespace Ifnc\Tads\Controller;
 
+use Ifnc\Tads\Entity\AlunoResponsavel;
 use Ifnc\Tads\Entity\Endereco;
+use Ifnc\Tads\Entity\Responsavel;
 use Ifnc\Tads\Entity\Usuario;
 use Ifnc\Tads\Helper\Email;
 use Ifnc\Tads\Helper\Flash;
@@ -66,6 +68,7 @@ class StoreUsuarioController implements IController
 
 
 
+
         $consulta_usuario = Usuario::findByCondition("email='{$_POST['email']}'");
         if($consulta_usuario != null && $usuario->id != $consulta_usuario->id){
 
@@ -96,14 +99,65 @@ class StoreUsuarioController implements IController
             }else if($em == 1){
                 $this->create( new Message("Erro no envio do email, Para validação do usuario repasse o seguinte codigo: $senha","alert-danger"));
             }
-            Util::redirect($usuario->tipo_user);
+           // Util::redirect($usuario->tipo_user);
 
         }else if($usuario->id != null){
-            $usuario->store();
+            $user = $usuario->store();
             $this->create( new Message("Usuario atualizado com Sucesso!","alert-success"));
-            Util::redirect($usuario->tipo_user);
+            //Util::redirect($usuario->tipo_user);
         }
 
+        if($usuario->tipo_user == 3){
+
+            $id_responsaveis = $_POST['id_responsavel'];
+            $id_al_resp = $_POST['id_al_resp'];
+            $nome_responsaveis = $_POST['nome_responsavel'];
+            $cpf_responsaveis = $_POST['cpf_responsavel'];
+            $data_responsaveis = $_POST['data_responsavel'];
+            $alRespTemp = null;
+            if($id_al_resp[0] != null){
+                $alRespTemp = AlunoResponsavel::find($id_al_resp[0]);
+            }
+
+            for($i = 0; $i < count($nome_responsaveis); $i++){
+
+                $resp = new Responsavel();
+                $resp->id = $id_responsaveis[$i];
+                $resp->nome = $nome_responsaveis[$i];
+                $resp->cpf = $cpf_responsaveis[$i];
+                $resp->data_nascimento = $data_responsaveis[$i];
+                $resp->store();
+
+                $alResp =  new AlunoResponsavel();
+                if($id_al_resp[$i] != null){
+                    $alResp = AlunoResponsavel::find($id_al_resp[$i]);
+                }else{
+                    $alResp->id_aluno = $alRespTemp->id_aluno;
+                }
+                if($usuario->id != null && $usuario->id != 0){
+                    $alResp->id_aluno = $usuario->id;
+                }else{
+
+                }
+
+                if($id_responsaveis[$i] != null) {
+                    $alResp->id_responsavel = $id_responsaveis[$i];
+                }else{
+                    $alResp->id_responsavel = $resp->id;
+                }
+
+
+
+
+
+                $alResp->store();
+            }
+
+
+        }
+
+
+        Util::redirect($usuario->tipo_user);
         Transaction::close();
         exit();
     }

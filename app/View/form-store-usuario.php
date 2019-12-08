@@ -99,6 +99,80 @@
             <input type="number" class="d-none" name="id" value="<?=isset($usuarioAtt) ? $usuarioAtt->id : ''?>" >
         </div>
 
+
+        <?php if(isset($tpUser) && $tpUser == 3) {?>
+            <hr>
+            <h5 class="font-weight-bold">Turma</h5>
+            <hr>
+            <div class="form-group">
+            <label>Turma</label>
+            <select class="form-control" name="id_turma">
+
+                <?php
+                        foreach ($turmas as $turma) {?>
+
+                            <option value="<?= $turma->id ?>" <?= isset($turmaAtt->id) && $turmaAtt->id == $turma->id ? 'selected="true"' : '' ?> > <?= $turma->nome ?> </option>
+
+                <?php
+                        }
+               ?>
+            </select>
+        </div>
+        <hr>
+        <h5 class="font-weight-bold">Responsáveis <div class="p-2 btn btn-circle bg_color_secundary fas fa-user-plus my_FontColor" onclick="newResp()"> </div> </h5>
+
+
+            <hr>
+        <div id="content_resp">
+            <?php if($name_btn != "Atualizar" && $tpUser == 3){  ?>
+            <div class="row">
+                <div class="form-group col">
+                    <label>Nome</label>
+                    <input type="text" class="form-control" placeholder="Nome" name="nome_responsavel[]" value="">
+                    <input type="number" class="d-none" placeholder="id" name="id_responsavel[]" value="" >
+                    <input type="number" class="d-none" placeholder="id" name="id_al_resp[]" value="" >
+
+                </div>
+                <div class="col">
+                    <label>CPF</label>
+                    <input type="text" class="form-control" placeholder="CPF" name="cpf_responsavel[]" value="">
+                </div>
+                <div class="col">
+                    <label>data Nascimento</label>
+                    <input type="date" class="form-control"  name="data_responsavel[]" value="">
+                </div>
+            </div>
+            <?php
+               }else{
+                if(isset($respAtt))
+                    foreach ($respAtt as $resp) {?>
+            <div class="row">
+                <div class="form-group col">
+                    <label>Nome</label>
+                    <input type="text" class="form-control" placeholder="Nome" name="nome_responsavel[]" value="<?= $resp->id_responsavel->nome ?>">
+                    <input type="number" class="d-none" placeholder="id" name="id_responsavel[]" value="<?= $resp->id_responsavel->id ?>" >
+                    <input type="number" class="d-none" placeholder="id" name="id_al_resp[]" value="<?= $resp->id ?>" >
+                </div>
+                <div class="col">
+                    <label>CPF</label>
+                    <input type="text" class="form-control" placeholder="CPF" name="cpf_responsavel[]" value="<?= $resp->id_responsavel->cpf ?>">
+                </div>
+                <div class="col">
+                    <label>data Nascimento</label>
+                    <input type="date" class="form-control"  name="data_responsavel[]" value="<?= $resp->id_responsavel->data_nascimento ?>">
+                </div>
+            </div>
+            <?php }
+            }
+            ?>
+
+        </div>
+
+
+
+        <?php } ?>
+
+
         <hr>
         <h5 class="font-weight-bold">Endereço</h5>
         <hr>

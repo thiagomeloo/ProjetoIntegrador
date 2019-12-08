@@ -20,6 +20,7 @@
 /cadastrarProfessor: CadastrarProfessorController
 
 /gerenciarAluno: GerenciarAlunoController
+/cadastrarAluno: CadastrarAlunoController
 
 /gerenciarTurma: GerenciarTurmaController
 /cadastrarTurma: CadastrarTurmaController

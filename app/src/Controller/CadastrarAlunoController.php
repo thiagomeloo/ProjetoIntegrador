@@ -3,6 +3,7 @@
 namespace Ifnc\Tads\Controller;
 
 
+use Ifnc\Tads\Entity\AlunoTurma;
 use Ifnc\Tads\Entity\Turma;
 use Ifnc\Tads\Entity\Usuario;
 use Ifnc\Tads\Helper\Render;
@@ -17,6 +18,15 @@ class CadastrarAlunoController implements IController
 
         Transaction::open();
 
+        $turmas = Turma::all();
+
+        for ($i = 0; $i < count($turmas); $i++){
+            $qtd = AlunoTurma::count("id_turma = ".$turmas[$i]->id);
+            if($qtd >= $turmas[$i]->qtd_max_alunos) {
+                unset($turmas[$i]);
+            }
+        }
+
         echo Render::html(
             [
 
@@ -30,7 +40,7 @@ class CadastrarAlunoController implements IController
                 "name_btn" => "Cadastrar",
                 "itens" => $_SESSION["itensMenu"],
                 "tpUser" => 3,
-                "turmas" => Turma::all()
+                "turmas" => $turmas
             ]);
 
         Transaction::close();

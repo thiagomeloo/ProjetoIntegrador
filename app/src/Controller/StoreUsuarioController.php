@@ -2,6 +2,7 @@
 namespace Ifnc\Tads\Controller;
 
 use Ifnc\Tads\Entity\AlunoResponsavel;
+use Ifnc\Tads\Entity\AlunoTurma;
 use Ifnc\Tads\Entity\Endereco;
 use Ifnc\Tads\Entity\Responsavel;
 use Ifnc\Tads\Entity\Usuario;
@@ -99,12 +100,27 @@ class StoreUsuarioController implements IController
             }else if($em == 1){
                 $this->create( new Message("Erro no envio do email, Para validação do usuario repasse o seguinte codigo: $senha","alert-danger"));
             }
-           // Util::redirect($usuario->tipo_user);
+            if(isset($_GET['type'])){
+
+                Util::redirect(null);
+                
+            }else{
+
+                Util::redirect($usuario->tipo_user);
+            }
 
         }else if($usuario->id != null){
             $user = $usuario->store();
             $this->create( new Message("Usuario atualizado com Sucesso!","alert-success"));
-            //Util::redirect($usuario->tipo_user);
+
+            if(isset($_GET['type'])){
+
+                Util::redirect(null);
+
+            }else{
+                Util::redirect($usuario->tipo_user);
+            }
+
         }
 
         if($usuario->tipo_user == 3){
@@ -119,6 +135,8 @@ class StoreUsuarioController implements IController
                 $alRespTemp = AlunoResponsavel::find($id_al_resp[0]);
             }
 
+
+
             for($i = 0; $i < count($nome_responsaveis); $i++){
 
                 $resp = new Responsavel();
@@ -128,6 +146,7 @@ class StoreUsuarioController implements IController
                 $resp->data_nascimento = $data_responsaveis[$i];
                 $resp->store();
 
+
                 $alResp =  new AlunoResponsavel();
                 if($id_al_resp[$i] != null){
                     $alResp = AlunoResponsavel::find($id_al_resp[$i]);
@@ -136,7 +155,6 @@ class StoreUsuarioController implements IController
                 }
                 if($usuario->id != null && $usuario->id != 0){
                     $alResp->id_aluno = $usuario->id;
-                }else{
 
                 }
 
@@ -146,13 +164,17 @@ class StoreUsuarioController implements IController
                     $alResp->id_responsavel = $resp->id;
                 }
 
-
-
-
-
                 $alResp->store();
             }
 
+            $alunoTurma = new AlunoTurma();
+            if(isset($_POST['idAlTurma']) && $_POST['idAlTurma'] != null ){
+                $alunoTurma = AlunoTurma::find($_POST['idAlTurma']);
+            }
+            $alunoTurma->id_aluno = $_POST['idAluno'] != null ? $_POST['idAluno'] : $usuario->id;
+            $alunoTurma->id_turma = $_POST['id_turma'];
+
+            $alunoTurma->store();
 
         }
 

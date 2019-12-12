@@ -30,10 +30,7 @@ class MainController implements IController
                 break;
             case 2:
                 $itens = array("itens" =>
-                    array( "url" => '/gerenciarAluno', "icone" => 'ico1', "nome" => 'COISA 2'),
-                    array( "url" => '/gerenciarProfessor', "icone" => 'ico2', "nome" => 'COISA 3'),
-                    array( "url" => '/gerenciarProfessor', "icone" => 'ico2', "nome" => 'COISA 4'),
-                    array( "url" => '/gerenciarAdmin', "icone" => 'ico3', "nome" => 'COISA 5')
+                    array( "url" => '/minhasDisciplinas', "icone" => 'fa-book', "nome" => 'MINHAS DISCIPLINAS'),
                 );
                 break;
             case 3:

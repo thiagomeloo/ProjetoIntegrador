@@ -40,6 +40,9 @@ class Util
             case 6:
                 header('Location: /minhaTurma', true, 302);
                 break;
+            case 7:
+                header('Location: /minhasDisciplinas', true, 302);
+                break;
             default:
                 header('Location: /main', true, 302);
                 break;

@@ -33,6 +33,9 @@
 /storeDisciplina: StoreDisciplinaController
 /editarDisciplina: EditarDisciplinaFormController
 /historicoDisciplina: HistoricoDisciplinaController
+/minhasDisciplinas: MinhasDisciplinasController
+/finalizarDisciplinaForm: FinalizarDisciplinaFormController
+/finalizarDisciplina: FinalizarDisciplinaController
 
 /solicitarMatricula: SolicitarMatriculaController
 /cancelarMatricula: CancelarMatriculaController

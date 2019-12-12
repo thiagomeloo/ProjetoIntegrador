@@ -27,10 +27,14 @@
 /editarTurma: EditarTurmaFormController
 /turmaManager: TurmaManagerController
 /storeTurma: StoreTurmaController
+/minhaTurma: MinhaTurmaController
 
 /cadastrarDisciplina : CadastrarDisciplinaController
 /storeDisciplina: StoreDisciplinaController
 /editarDisciplina: EditarDisciplinaFormController
 /historicoDisciplina: HistoricoDisciplinaController
+
+/solicitarMatricula: SolicitarMatriculaController
+/cancelarMatricula: CancelarMatriculaController
 
 

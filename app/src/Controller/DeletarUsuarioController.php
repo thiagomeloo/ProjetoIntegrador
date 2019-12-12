@@ -9,7 +9,6 @@ use Ifnc\Tads\Helper\Flash;
 use Ifnc\Tads\Helper\Message;
 use Ifnc\Tads\Helper\Transaction;
 use Ifnc\Tads\Helper\Util;
-use Symfony\Component\Yaml\Tests\A;
 
 
 class DeletarUsuarioController implements IController

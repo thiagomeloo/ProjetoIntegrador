@@ -35,6 +35,13 @@ class MainController implements IController
                     array( "url" => '/gerenciarProfessor', "icone" => 'ico2', "nome" => 'COISA 4'),
                     array( "url" => '/gerenciarAdmin', "icone" => 'ico3', "nome" => 'COISA 5')
                 );
+                break;
+            case 3:
+                $itens = array("itens" =>
+                    array( "url" => '/minhaTurma', "icone" => 'fa-user-graduate', "nome" => 'MINHA TURMA'),
+
+                );
+                break;
         }
 
         $_SESSION["itensMenu"] = $itens;

@@ -37,9 +37,12 @@ class Util
             case 5:
                 header('Location: /turmaManager?id='.$value, true, 302);
                 break;
+            case 6:
+                header('Location: /minhaTurma', true, 302);
+                break;
             default:
                 header('Location: /main', true, 302);
-
+                break;
         }
 
     }

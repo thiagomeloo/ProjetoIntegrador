@@ -31,12 +31,13 @@ class MainController implements IController
             case 2:
                 $itens = array("itens" =>
                     array( "url" => '/minhasDisciplinas', "icone" => 'fa-book', "nome" => 'MINHAS DISCIPLINAS'),
+
                 );
                 break;
             case 3:
                 $itens = array("itens" =>
                     array( "url" => '/minhaTurma', "icone" => 'fa-user-graduate', "nome" => 'MINHA TURMA'),
-
+                    array( "url" => '/boletins', "icone" => 'fa-book', "nome" => 'BOLETINS')
                 );
                 break;
         }

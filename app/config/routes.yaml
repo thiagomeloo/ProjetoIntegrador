@@ -40,4 +40,6 @@
 /solicitarMatricula: SolicitarMatriculaController
 /cancelarMatricula: CancelarMatriculaController
 
+/boletins: BoletinsController
+
 

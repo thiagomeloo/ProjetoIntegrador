@@ -75,7 +75,7 @@
 			</index>
 		</table>
 		<table name="Matricula" >
-			<column name="id" type="integer" jt="4" />
+			<column name="id" type="integer" jt="4" mandatory="y" />
 			<column name="status" type="integer" length="1" jt="4" />
 			<column name="nota_final" type="integer" jt="4" />
 			<column name="faltas" type="integer" jt="4" />
@@ -83,6 +83,9 @@
 			<column name="id_aluno" type="integer" jt="4" />
 			<column name="id_turma" type="integer" jt="4" />
 			<column name="id_disciplina" type="integer" jt="4" />
+			<index name="Pk_Matricula_id" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
 			<fk name="fk_aluno" to_schema="Default" to_table="Usuario" >
 				<fk_column name="id_aluno" pk="id" />
 			</fk>
@@ -106,13 +109,13 @@
 		</table>
 		<table name="Responsavel" >
 			<column name="id" type="integer" jt="4" mandatory="y" />
-			<column name="chave_de_acesso" type="integer" jt="4" />
+			<column name="nome" type="varchar" length="255" jt="12" />
+			<column name="senha" type="varchar" length="255" jt="12" />
+			<column name="cpf" type="varchar" length="15" jt="12" />
+			<column name="data_nascimento" type="date" jt="91" />
 			<index name="Pk_Responsavel_id" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
-			<fk name="fk_responsavel_usuario" to_schema="Default" to_table="Usuario" >
-				<fk_column name="id" pk="id" />
-			</fk>
 		</table>
 		<table name="Telefone" >
 			<column name="id" type="integer" jt="4" mandatory="y" />
@@ -178,14 +181,14 @@
 	</schema>
 	<layout name="Default Layout" id="Layout_27e911a" show_relation="columns" >
 		<entity schema="Default" name="Telefone" color="C1D8EE" x="48" y="208" />
-		<entity schema="Default" name="Responsavel" color="C1D8EE" x="96" y="464" />
 		<entity schema="Default" name="Endereco" color="C1D8EE" x="160" y="272" />
 		<entity schema="Default" name="Usuario" color="C1D8EE" x="352" y="176" />
 		<entity schema="Default" name="Disciplina" color="C1D8EE" x="656" y="496" />
 		<entity schema="Default" name="AlunoTurma" color="C1D8EE" x="608" y="224" />
 		<entity schema="Default" name="Turma" color="C1D8EE" x="816" y="320" />
-		<entity schema="Default" name="Matricula" color="C1D8EE" x="912" y="560" />
 		<entity schema="Default" name="Disciplina_History" color="C1D8EE" x="720" y="48" />
-		<entity schema="Default" name="Aluno_responsavel" color="C1D8EE" x="128" y="640" />
+		<entity schema="Default" name="Matricula" color="C1D8EE" x="912" y="560" />
+		<entity schema="Default" name="Responsavel" color="C1D8EE" x="96" y="464" />
+		<entity schema="Default" name="Aluno_responsavel" color="C1D8EE" x="144" y="704" />
 	</layout>
 </project>
